@@ -1,257 +1,140 @@
-import Image from "next/image";
+import Link from "next/link";
+import { PageCard } from "../components/pageCard";
+import { PageNav } from "../components/pageNav";
+import { MediaPanel, MediaSection } from "../components/mediaPanel";
+import { TechStackGrid } from "../components/techStackGrid";
+import {
+  languages,
+  frameworksAndLibraries,
+  tools,
+} from "../data/portfolioData";
 
-const languages = [
-  {
-    label: "Java",
-    src: "/skill-icons_java-light.svg",
-  },
-  {
-    label: "HTML",
-    src: "/devicon_html5-wordmark.svg",
-  },
-  {
-    label: "CSS",
-    src: "/devicon_css3-wordmark.svg",
-  },
-  {
-    label: "JavaScript",
-    src: "/vscode-icons_file-type-js-official.svg",
-  },
-];
+/* About Page */
+export default function About() {
+  const aboutMediaSections: MediaSection[] = [
+    {
+      imageSrc: "/about_image.svg",
+      alt: "John Gabriel Gabon profile graphic illustration",
+      bgColor: "#ff7d00",
+      number: "01",
+      label: "about",
+      iconSrc: "/mdi_about.svg",
+      priority: true,
+    },
+  ];
 
-const framelibdata = [
-  {
-    label: "React",
-    src: "/skill-icons_react-light.svg",
-  },
-  {
-    label: "Node.js",
-    src: "/material-icon-theme_nodejs-alt.svg",
-  },
-  {
-    label: "Next.js",
-    src: "/devicon_nextjs.svg",
-  },
-  {
-    label: "TypeScript",
-    src: "/devicon_typescript.svg",
-  },
-  {
-    label: "MySQL",
-    src: "/devicon_mysql.svg",
-  },
-  {
-    label: "MongoDB",
-    src: "/vscode-icons_file-type-mongo.svg",
-  },
-];
-
-const tools = [
-  {
-    label: "AWS",
-    src: "/skill-icons_aws-light.svg",
-  },
-  {
-    label: "Figma",
-    src: "/skill-icons_figma-light.svg",
-  },
-];
-
-export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-white px-6 py-10 sm:px-10 lg:px-16">
-      <div className="mx-auto w-full max-w-[1289px] overflow-hidden rounded-[45px] border border-[#001524] bg-white lg:h-[874px]">
-        <div className="grid gap-12 px-8 pb-10 pt-8 lg:h-full lg:grid-cols-[1fr_0.95fr] lg:px-12 lg:pb-12 lg:pt-10">
-          {/* LEFT PANEL */}
-          <div className="relative flex h-full min-h-0 flex-col">
-            <div className="absolute inset-0 flex items-center justify-end pointer-events-none">
-              {/* NEXT ICON */}
-              <a href="/about/orgs">
-                <div
-                  className="pointer-events-auto"
-                  style={{
-                    width: "48px",
-                    height: "48px",
-                    backgroundColor: "var(--brand-orange)",
-                    maskImage: "url('/icon-park-solid_right-c.svg')",
-                    WebkitMaskImage: "url('/icon-park-solid_right-c.svg')",
-                    maskSize: "contain",
-                    WebkitMaskSize: "contain",
-                    maskRepeat: "no-repeat",
-                    WebkitMaskRepeat: "no-repeat",
-                    maskPosition: "center",
-                    WebkitMaskPosition: "center",
-                  }}
-                />
-              </a>
-            </div>
-            {/* TOP SECTION */}
-            <div className="col-span-full grid grid-cols-3 items-center text-[18px] text-[#001524] sm:text-[20px]">
-              <a href="/">
-                <span className="font-amoria justify-self-start">back</span>
-              </a>
-              <span className="font-amoria justify-self-center">
-                {"</aplace>"}
-              </span>
-              <span className="font-amoria justify-self-end">about</span>
-            </div>
-
-            {/* BOTTOM SECTION */}
-            <div className="flex flex-1 flex-col justify-center">
-              <h1 className="text-[48px] leading-[0.90] tracking-[-0.5px] text-[#001524]">
-                <span className="block text-[var(--brand-orange)]">
-                  John Gabriel
-                </span>
-                <span className="block text-[var(--brand-orange)]">Gabon</span>
-              </h1>
-
-              <p className="mt-4 max-w-xl text-[16px] leading-[1.25] text-[#001524]/90 sm:text-[18px] lg:text-[20px]">
-                Bachelor of Science in Information Technology
-                <br />
-                <i>Bulacan State University - Malolos Campus</i>
-              </p>
-
-              {/* BUTTONS */}
-              <div className="mt-4 flex flex-wrap gap-4">
-                <a
-                  className="flex items-center justify-center rounded-full bg-[#ff7d00] px-8 py-3 text-[14px] font-bold uppercase tracking-[0.6px] text-white transition-transform hover:-translate-y-0.5"
-                  href="/misc/Resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Download CV
-                </a>
-                <a
-                  className="flex items-center justify-center rounded-full bg-[#001524] px-8 py-3 text-[14px] font-bold uppercase tracking-[0.6px] text-white transition-transform hover:-translate-y-0.5"
-                  href="https://www.linkedin.com/in/gabrielgabon/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View Linkedin
-                </a>
-              </div>
-
-              {/* TECHNICAL SKILLS */}
-              <div className="mt-4 mb-12">
-                <h1 className="text-[32px] tracking-[-0.5px] text-[#ff7d00]">
-                  Tech Stacks
-                </h1>
-                <p className="mt-2 max-w-xl text-[16px] leading-[1.25] text-[#001524]/90 sm:text-[18px] lg:text-[20px]">
-                  Languages
-                </p>
-                <div className="mt-2 flex flex-wrap gap-5">
-                  {languages.map((stack) => (
-                    <div
-                      key={stack.label}
-                      className="flex w-[64px] flex-col items-center gap-2"
-                    >
-                      <Image
-                        src={stack.src}
-                        alt={`${stack.label} logo`}
-                        width={48}
-                        height={48}
-                      />
-                      <p className="text-center text-[14px] tracking-[-0.5px] text-[#001524]">
-                        {stack.label}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-
-                <p className="mt-2 max-w-xl text-[16px] leading-[1.25] text-[#001524]/90 sm:text-[18px] lg:text-[20px]">
-                  Frameworks, Libraries, & Databases
-                </p>
-                <div className="mt-2 flex flex-wrap gap-5">
-                  {framelibdata.map((stack) => (
-                    <div
-                      key={stack.label}
-                      className="flex w-[64px] flex-col items-center gap-2"
-                    >
-                      <Image
-                        src={stack.src}
-                        alt={`${stack.label} logo`}
-                        width={48}
-                        height={48}
-                      />
-                      <p className="text-center text-[14px] tracking-[-0.5px] text-[#001524]">
-                        {stack.label}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-
-                <p className="mt-2 max-w-xl text-[16px] leading-[1.25] text-[#001524]/90 sm:text-[18px] lg:text-[20px]">
-                  Tools & Platforms
-                </p>
-                <div className="mt-2 flex flex-wrap gap-5">
-                  {tools.map((stack) => (
-                    <div
-                      key={stack.label}
-                      className="flex w-[64px] flex-col items-center gap-2"
-                    >
-                      <Image
-                        src={stack.src}
-                        alt={`${stack.label} logo`}
-                        width={48}
-                        height={48}
-                      />
-                      <p className="text-center text-[14px] tracking-[-0.5px] text-[#001524]">
-                        {stack.label}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+    <div className="portfolio-viewport">
+      <PageCard>
+        <div className="portfolio-card-shell relative">
+          {/* FLOATING NEXT PAGE ARROW */}
+          <div className="hidden lg:flex absolute right-[47.5%] top-1/2 -translate-y-1/2 z-40 items-center justify-end pointer-events-none">
+            <Link href="/about/orgs" transitionTypes={["nav-forward"]}>
+              <div
+                className="pointer-events-auto mr-6 cursor-pointer hover:scale-110 active:scale-95 transition-transform duration-300 flex items-center justify-center rounded-full shadow-lg"
+                style={{
+                  width: "36px",
+                  height: "36px",
+                  backgroundColor: "var(--brand-orange)",
+                  maskImage: "url('/icon-park-solid_right-c.svg')",
+                  WebkitMaskImage: "url('/icon-park-solid_right-c.svg')",
+                  maskSize: "contain",
+                  WebkitMaskSize: "contain",
+                  maskRepeat: "no-repeat",
+                  WebkitMaskRepeat: "no-repeat",
+                  maskPosition: "center",
+                  WebkitMaskPosition: "center",
+                }}
+                aria-label="View Organizations and Involvement"
+              />
+            </Link>
           </div>
 
-          {/* RIGHT PANEL */}
-          <div className="grid h-[874px] grid-rows-[50fr] overflow-hidden lg:-mr-14 lg:mt-[-7.5%]">
-            {/* TOP IMAGE SECTION */}
-            <div className="relative w-full bg-[#ff7d00]">
-              <Image
-                src="/about_image.svg"
-                alt="About"
-                fill
-                className="object-cover object-[center_25%]"
-                sizes="(min-width: 1024px) 629px, 100vw"
-                priority
-              />
-              {/* LABELS */}
-              <div className="absolute inset-0 flex items-end justify-between px-6 mb-6">
-                {/* LEFT SIDE */}
-                <div className="flex items-center gap-4 text-white">
-                  {/* ICON */}
-                  <Image
-                    src="/mdi_about.svg"
-                    alt="About"
-                    priority
-                    height={72}
-                    width={72}
+          <div className="portfolio-card-grid">
+            {/* LEFT PANEL */}
+            <div className="portfolio-left-panel">
+              {/* NAV */}
+              <PageNav backHref="/" activePage="about" />
+
+              {/* Scrollable Main Content Container
+                  This container is styled to handle text overflow gracefully on smaller heights. */}
+              <div className="portfolio-main-copy portfolio-scroll-area">
+                {/* HEADINGS */}
+                <h1 className="portfolio-about-title text-[#001524] select-none">
+                  <span className="block text-[var(--brand-orange)]">
+                    John Gabriel
+                  </span>
+                  <span className="block text-[var(--brand-orange)]">
+                    Gabon
+                  </span>
+                </h1>
+
+                {/* DETAILS */}
+                <p className="portfolio-copy max-w-xl text-[#001524] mt-4 text-[14px] sm:text-[16px]">
+                  Bachelor of Science in Information Technology
+                  <br />
+                  <span className="text-[12px] sm:text-[14px] text-[#001524] italic">
+                    Bulacan State University - Malolos Campus
+                  </span>
+                </p>
+
+                {/* BUTTONS */}
+                <div className="portfolio-actions flex flex-wrap gap-4 mt-4">
+                  <a
+                    className="flex items-center justify-center rounded-full bg-[#ff7d00] px-8 py-3 text-[12px] font-bold uppercase tracking-[0.6px] text-white transition-all hover:scale-105 hover:-translate-y-0.5 active:scale-95 shadow-sm"
+                    href="/misc/Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Download CV
+                  </a>
+                  <a
+                    className="flex items-center justify-center rounded-full bg-[#001524] px-8 py-3 text-[12px] font-bold uppercase tracking-[0.6px] text-white transition-all hover:scale-105 hover:-translate-y-0.5 active:scale-95 shadow-sm"
+                    href="https://www.linkedin.com/in/gabrielgabon/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View Linkedin
+                  </a>
+                </div>
+
+                {/* TECHNICAL SKILLS SECTION */}
+                <div className="portfolio-section-block">
+                  <h2 className="portfolio-section-title text-[#ff7d00] select-none">
+                    Technical Skills
+                  </h2>
+
+                  {/* LANGUAGES */}
+                  <TechStackGrid subtitle="Languages" items={languages} />
+
+                  {/* FRAMEWORKS, LIBRARIES, & DATABASES */}
+                  <TechStackGrid
+                    subtitle="Frameworks, Libraries, & Databases"
+                    items={frameworksAndLibraries}
                   />
 
-                  {/* TEXT */}
-                  <div className="flex flex-col justify-center leading-none">
-                    <h1 className="text-[64px] tracking-[-0.5px]">01</h1>
-                    <p className="text-[20px] font-bold uppercase tracking-[0px]">
-                      About
-                    </p>
-                  </div>
+                  {/* TOOLS & PLATFORMS */}
+                  <TechStackGrid subtitle="Tools & Platforms" items={tools} />
                 </div>
-                {/* RIGHT SIDE */}
-                <Image
-                  src="/icon-park-solid_right-c.svg"
-                  alt="Arrow"
-                  priority
-                  className="mr-4 mb-2"
-                  height={48}
-                  width={48}
-                />
+
+                {/* MOBILE ONLY */}
+                <div className="lg:hidden mt-8 pt-4 border-t border-[#001524]/10 text-right">
+                  <Link
+                    href="/about/orgs"
+                    transitionTypes={["nav-forward"]}
+                    className="inline-flex items-center gap-2 text-[var(--brand-orange)] font-bold uppercase tracking-[0.05em] text-[14px] hover:translate-x-1 transition-transform"
+                  >
+                    Organizations & Involvement &rarr;
+                  </Link>
+                </div>
               </div>
             </div>
+
+            {/* RIGHT PANEL - Unified Visual Graphic Column */}
+            <MediaPanel sections={aboutMediaSections} arrowSize={48} />
           </div>
         </div>
-      </div>
+      </PageCard>
     </div>
   );
 }

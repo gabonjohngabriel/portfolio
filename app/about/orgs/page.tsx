@@ -1,184 +1,107 @@
 import Image from "next/image";
+import { PageCard } from "../../components/pageCard";
+import { PageNav } from "../../components/pageNav";
+import { MediaPanel, MediaSection } from "../../components/mediaPanel";
+import { organizations, socials } from "../../data/portfolioData";
 
-const languages = [
-  {
-    label: "Java",
-    src: "/skill-icons_java-light.svg",
-  },
-];
+/* Organizations & Involvement Page */
+export default function Orgs() {
+  const orgsMediaSections: MediaSection[] = [
+    {
+      imageSrc: "/about_image.svg",
+      alt: "John Gabriel Gabon profile graphic illustration",
+      bgColor: "#ff7d00", // Orange
+      number: "01",
+      label: "About",
+      iconSrc: "/mdi_about.svg",
+      priority: true,
+    },
+  ];
 
-export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-white px-6 py-10 sm:px-10 lg:px-16">
-      <div className="mx-auto w-full max-w-[1289px] overflow-hidden rounded-[45px] border border-[#001524] bg-white lg:h-[874px]">
-        <div className="grid gap-12 px-8 pb-10 pt-8 lg:h-full lg:grid-cols-[1fr_0.95fr] lg:px-12 lg:pb-12 lg:pt-10">
-          {/* LEFT PANEL */}
-          <div className="relative flex h-full min-h-0 flex-col">
-            <div className="absolute inset-0 flex items-center justify-end pointer-events-none">
-              {/* NEXT ICON */}
-              <a href="">
-                <div
-                  className="pointer-events-auto"
-                  style={{
-                    width: "48px",
-                    height: "48px",
-                    backgroundColor: "var(--brand-orange)",
-                    maskImage: "url('/icon-park-solid_right-c.svg')",
-                    WebkitMaskImage: "url('/icon-park-solid_right-c.svg')",
-                    maskSize: "contain",
-                    WebkitMaskSize: "contain",
-                    maskRepeat: "no-repeat",
-                    WebkitMaskRepeat: "no-repeat",
-                    maskPosition: "center",
-                    WebkitMaskPosition: "center",
-                  }}
-                />
-              </a>
-            </div>
-            {/* TOP SECTION */}
-            <div className="col-span-full grid grid-cols-3 items-center text-[18px] text-[#001524] sm:text-[20px]">
-              <a href="/about">
-                <span className="font-amoria justify-self-start">back</span>
-              </a>
-              <span className="font-amoria justify-self-center">
-                {"</aplace>"}
-              </span>
-              <span className="font-amoria justify-self-end">about</span>
-            </div>
+    <div className="portfolio-viewport">
+      <PageCard>
+        <div className="portfolio-card-shell relative">
+          <div className="portfolio-card-grid">
+            {/* LEFT PANEL */}
+            <div className="portfolio-left-panel">
+              {/* HEADER */}
+              <PageNav backHref="/about" activePage="about" />
 
-            {/* BOTTOM SECTION */}
-            <div className="flex flex-1 flex-col justify-center">
-              <h1 className="text-[48px] leading-[0.90] tracking-[-0.5px] text-[#001524]">
-                <span className="block text-[var(--brand-orange)]">
-                  John Gabriel
-                </span>
-                <span className="block text-[var(--brand-orange)]">Gabon</span>
-              </h1>
+              {/* Scrollable Main Content Container */}
+              <div className="portfolio-main-copy portfolio-scroll-area">
+                {/* ORGANIZATIONS & INVOLVEMENT SECTION */}
+                <div className="portfolio-section-block">
+                  <h2 className="portfolio-section-title text-[#ff7d00] select-none">
+                    Organizations & Involvement
+                  </h2>
 
-              <p className="mt-4 max-w-xl text-[16px] leading-[1.25] text-[#001524]/90 sm:text-[18px] lg:text-[20px]">
-                Bachelor of Science in Information Technology
-                <br />
-                <i>Bulacan State University - Malolos Campus</i>
-              </p>
+                  {/* GRID */}
+                  <div className="portfolio-org-grid flex flex-wrap">
+                    {organizations.map((org) => (
+                      <div
+                        key={org.label}
+                        className="portfolio-org-card items-start justify-center bg-[#ff7d00] shadow-sm hover:-translate-y-1 transition-all duration-300 ease-out p-6 rounded-2xl select-none"
+                      >
+                        {/* Organization Name */}
+                        <h2 className="text-left leading-[1.1] text-[16px] sm:text-[18px] text-[#ffffff] mt-2">
+                          {org.label}
+                        </h2>
 
-              {/* BUTTONS */}
-              <div className="mt-4 flex flex-wrap gap-4">
-                <a
-                  className="flex items-center justify-center rounded-full bg-[#ff7d00] px-8 py-3 text-[14px] font-bold uppercase tracking-[0.6px] text-white transition-transform hover:-translate-y-0.5"
-                  href="/misc/Resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Download CV
-                </a>
-                <a
-                  className="flex items-center justify-center rounded-full bg-[#001524] px-8 py-3 text-[14px] font-bold uppercase tracking-[0.6px] text-white transition-transform hover:-translate-y-0.5"
-                  href="https://www.linkedin.com/in/gabrielgabon/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View Linkedin
-                </a>
-              </div>
-
-              {/* ORGANIZATIONS & INVOLVEMENT */}
-              <div className="mt-4">
-                <h1 className="text-[32px] tracking-[-0.5px] text-[#ff7d00]">
-                  Organizations & Involvement
-                </h1>
-                <div className="mt-2 flex flex-wrap gap-5">
-                  {languages.map((stack) => (
-                    <div
-                      key={stack.label}
-                      className="flex w-[64px] flex-col items-center gap-2"
-                    >
-                      <Image
-                        src={stack.src}
-                        alt={`${stack.label} logo`}
-                        width={48}
-                        height={48}
-                      />
-                      <p className="text-center text-[14px] tracking-[-0.5px] text-[#001524]">
-                        {stack.label}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              {/* SOCIALS */}
-              <div className="mt-4 mb-12">
-                <h1 className="text-[32px] tracking-[-0.5px] text-[#ff7d00]">
-                  Socials
-                </h1>
-                <div className="mt-2 flex flex-wrap gap-5">
-                  {languages.map((stack) => (
-                    <div
-                      key={stack.label}
-                      className="flex w-[64px] flex-col items-center gap-2"
-                    >
-                      <Image
-                        src={stack.src}
-                        alt={`${stack.label} logo`}
-                        width={48}
-                        height={48}
-                      />
-                      <p className="text-center text-[14px] tracking-[-0.5px] text-[#001524]">
-                        {stack.label}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* RIGHT PANEL */}
-          <div className="grid h-[874px] grid-rows-[50fr] overflow-hidden lg:-mr-14 lg:mt-[-7.5%]">
-            {/* TOP IMAGE SECTION */}
-            <div className="relative w-full bg-[#ff7d00]">
-              <Image
-                src="/about_image.svg"
-                alt="About"
-                fill
-                className="object-cover object-[center_25%]"
-                sizes="(min-width: 1024px) 629px, 100vw"
-                priority
-              />
-              {/* LABELS */}
-              <div className="absolute inset-0 flex items-end justify-between px-6 mb-6">
-                {/* LEFT SIDE */}
-                <div className="flex items-center gap-4 text-white">
-                  {/* ICON */}
-                  <Image
-                    src="/mdi_about.svg"
-                    alt="About"
-                    priority
-                    height={72}
-                    width={72}
-                  />
-
-                  {/* TEXT */}
-                  <div className="flex flex-col justify-center leading-none">
-                    <h1 className="text-[64px] tracking-[-0.5px]">01</h1>
-                    <p className="text-[20px] font-bold uppercase tracking-[0px]">
-                      About
-                    </p>
+                        {/* Position Description */}
+                        <p className="text-left leading-normal text-[12px] sm:text-[14px] text-[#ffffff]/90 whitespace-pre-line font-regular">
+                          {Array.isArray(org.position)
+                            ? org.position.join("\n")
+                            : org.position}
+                        </p>
+                      </div>
+                    ))}
                   </div>
                 </div>
-                {/* RIGHT SIDE */}
-                <Image
-                  src="/icon-park-solid_right-c.svg"
-                  alt="Arrow"
-                  priority
-                  className="mr-4 mb-2"
-                  height={48}
-                  width={48}
-                />
+
+                {/* SOCIALS SECTION */}
+                <div className="portfolio-section-block">
+                  <h2 className="portfolio-section-title text-[#ff7d00] select-none">
+                    Socials
+                  </h2>
+
+                  {/* Clickable interactive social networks grid */}
+                  <div className="portfolio-stack-grid flex flex-wrap">
+                    {socials.map((social) => (
+                      <a
+                        key={social.label}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="portfolio-stack-item mt-2 flex flex-col items-center group cursor-pointer"
+                      >
+                        {/* Brand Icon with micro hover scaling animation */}
+                        <div className="relative transition-transform duration-300 ease-out group-hover:scale-110">
+                          <Image
+                            src={social.src}
+                            alt={`${social.label} icon`}
+                            width={48}
+                            height={48}
+                            className="object-contain"
+                          />
+                        </div>
+
+                        {/* Label */}
+                        <p className="text-center text-[12px] md:text-[14px] tracking-[-0.5px] text-[#001524] select-none font-regular mt-1">
+                          {social.label}
+                        </p>
+                      </a>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
+
+            {/* RIGHT PANEL - Unified Visual Graphic Column */}
+            <MediaPanel sections={orgsMediaSections} arrowSize={48} />
           </div>
         </div>
-      </div>
+      </PageCard>
     </div>
   );
 }
