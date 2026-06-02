@@ -21,7 +21,7 @@ export default function Services() {
   ];
 
   return (
-    <div className="portfolio-viewport">
+    <div className="portfolio-viewport select-none">
       <PageCard>
         <div className="portfolio-card-shell">
           <div className="portfolio-card-grid__no-text">
@@ -64,7 +64,7 @@ export default function Services() {
 
                 {/* SERVICES & SOLUTIONS SECTION */}
                 <div className="portfolio-services-section">
-                  <h2 className="portfolio-services-section-title text-[var(--brand-teal)] select-none mt-2">
+                  <h2 className="portfolio-services-section-title text-[var(--brand-teal)] mt-2">
                     Services &amp; Solutions
                   </h2>
 

@@ -22,7 +22,7 @@ export default function Orgs() {
   ];
 
   return (
-    <div className="portfolio-viewport">
+    <div className="portfolio-viewport select-none">
       <PageCard>
         <div className="portfolio-card-shell relative">
           <div className="portfolio-card-grid">
@@ -35,7 +35,7 @@ export default function Orgs() {
               <div className="portfolio-main-copy portfolio-scroll-area">
                 {/* ORGANIZATIONS & INVOLVEMENT SECTION */}
                 <div className="portfolio-section-block">
-                  <h2 className="portfolio-section-title text-[#ff7d00] select-none">
+                  <h2 className="portfolio-section-title text-[#ff7d00]">
                     Organizations & Involvement
                   </h2>
 
@@ -44,7 +44,7 @@ export default function Orgs() {
                     {organizations.map((org) => (
                       <div
                         key={org.label}
-                        className="portfolio-org-card items-start justify-center bg-[#ff7d00] shadow-sm hover:-translate-y-1 transition-all duration-300 ease-out p-6 rounded-2xl select-none"
+                        className="portfolio-org-card items-start justify-center bg-[#ff7d00] shadow-sm hover:-translate-y-1 transition-all duration-300 ease-out p-6 rounded-2xl"
                       >
                         {/* ORG NAME */}
                         <h2 className="text-left leading-[1.1] text-[16px] sm:text-[18px] text-[#ffffff] mt-2">
@@ -64,7 +64,7 @@ export default function Orgs() {
 
                 {/* SOCIALS SECTION */}
                 <div className="portfolio-section-block">
-                  <h2 className="portfolio-section-title text-[#ff7d00] select-none">
+                  <h2 className="portfolio-section-title text-[#ff7d00]">
                     Socials
                   </h2>
 
@@ -90,7 +90,7 @@ export default function Orgs() {
                         </div>
 
                         {/* LABEL */}
-                        <p className="text-center text-[12px] md:text-[14px] tracking-[-0.5px] text-[#001524] select-none font-regular mt-1">
+                        <p className="text-center text-[12px] md:text-[14px] tracking-[-0.5px] text-[#001524] font-regular mt-1">
                           {social.label}
                         </p>
                       </a>

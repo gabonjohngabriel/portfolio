@@ -23,7 +23,7 @@ export default function About() {
   ];
 
   return (
-    <div className="portfolio-viewport">
+    <div className="portfolio-viewport select-none">
       <PageCard>
         <div className="portfolio-card-shell relative">
           {/* FLOATING NEXT PAGE ARROW */}
@@ -59,7 +59,7 @@ export default function About() {
                   This container is styled to handle text overflow gracefully on smaller heights. */}
               <div className="portfolio-main-copy portfolio-scroll-area">
                 {/* HEADINGS */}
-                <h1 className="portfolio-about-title text-[#001524] select-none">
+                <h1 className="portfolio-about-title text-[#001524]">
                   <span className="block text-[var(--brand-orange)]">
                     John Gabriel
                   </span>
@@ -99,7 +99,7 @@ export default function About() {
 
                 {/* TECHNICAL SKILLS SECTION */}
                 <div className="portfolio-section-block">
-                  <h2 className="portfolio-section-title text-[#ff7d00] select-none">
+                  <h2 className="portfolio-section-title text-[#ff7d00]">
                     Technical Skills
                   </h2>
 

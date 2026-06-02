@@ -32,7 +32,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="portfolio-viewport">
+    <div className="portfolio-viewport select-none">
       <PageCard>
         <div className="portfolio-card-shell">
           <div className="portfolio-card-grid">
@@ -54,7 +54,7 @@ export default function Home() {
                         alt="Through graphic element"
                         width={110}
                         height={65}
-                        className="portfolio-through object-contain select-none"
+                        className="portfolio-through object-contain"
                         aria-hidden="true"
                       />
                     </span>
@@ -93,7 +93,7 @@ export default function Home() {
                             className="object-contain"
                           />
                         </div>
-                        <p className="text-center text-[12px] md:text-[14px] tracking-[-0.5px] text-[#001524] select-none">
+                        <p className="text-center text-[12px] md:text-[14px] tracking-[-0.5px] text-[#001524]">
                           {stack.label}
                         </p>
                       </div>
