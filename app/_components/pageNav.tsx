@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-interface PageNavProps {
+export interface PageNavProps {
   backHref?: string;
   activePage: string;
 }

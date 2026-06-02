@@ -25,6 +25,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+
   h1,
   h2,
   .font-display {
@@ -179,7 +180,7 @@ body::-webkit-scrollbar {
 
 /* Stack Grid */
 .portfolio-stack-grid {
-  gap: clamp(12px, 1.7vmin, 24px);
+  gap: clamp(2px, 0.75vmin, 4px);
 }
 
 .portfolio-stack-item {
@@ -244,6 +245,73 @@ body::-webkit-scrollbar {
   margin-bottom: clamp(4px, 0.8vmin, 8px);
 }
 
+/* Services Page - Service Cards */
+.portfolio-services-title {
+  font-size: clamp(36px, min(5.2vw, 7.8vh), 52px);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  font-family: var(--font-display);
+}
+
+.portfolio-services-copy {
+  margin-top: clamp(6px, 1vmin, 10px);
+  font-size: clamp(11px, min(1.2vw, 1.8vh), 14px);
+  line-height: 1.45;
+}
+
+.portfolio-btn-outline,
+.portfolio-btn-solid {
+  padding: clamp(7px, 1vmin, 10px) clamp(14px, 2vmin, 24px);
+  font-size: clamp(9px, 1.05vmin, 12px);
+  letter-spacing: 0.07em;
+  white-space: nowrap;
+}
+
+.portfolio-services-section {
+  margin-top: clamp(10px, 1.4vmin, 16px);
+}
+
+.portfolio-services-section-title {
+  font-size: clamp(22px, min(3.2vw, 4.8vh), 36px);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+.portfolio-service-grid {
+  margin-top: clamp(8px, 1.2vmin, 14px);
+  gap: clamp(8px, 1.4vmin, 14px);
+}
+
+.portfolio-service-card {
+  width: clamp(130px, 19vw, 185px);
+  min-height: clamp(130px, 18vw, 170px);
+  border-radius: clamp(12px, 1.8vmin, 18px);
+  padding: clamp(14px, 1.8vmin, 20px);
+  gap: clamp(6px, 0.9vmin, 10px);
+}
+
+.portfolio-service-icon-wrap {
+  width: clamp(42px, 4.8vmin, 50px);
+  height: clamp(42px, 4.8vmin, 50px);
+  border-radius: clamp(7px, 1vmin, 10px);
+  flex-shrink: 0;
+}
+
+.portfolio-service-icon-wrap img {
+  width: clamp(30px, 2.6vmin, 36px);
+  height: clamp(30px, 2.6vmin, 36px);
+}
+
+.portfolio-service-card-title {
+  font-size: clamp(14px, 1.35vmin, 18px);
+  letter-spacing: 0.04em;
+  margin-top: clamp(4px, 0.3vmin, 8px);
+}
+
+.portfolio-service-card-desc {
+  font-size: clamp(11px, 1.1vmin, 12px);
+}
+
 /* About Page - Organizations & Involvement */
 .portfolio-org-grid {
   margin-top: clamp(12px, 1.2vmin, 16px);
@@ -286,10 +354,12 @@ body::-webkit-scrollbar {
   .portfolio-card-shell {
     width: 90%;
   }
+
   .portfolio-card-grid {
     grid-template-columns: minmax(0, 1fr) minmax(220px, 0.85fr);
     gap: 20px;
   }
+
   .portfolio-left-panel {
     padding: 24px;
   }
@@ -360,6 +430,19 @@ body::-webkit-scrollbar {
     width: 100%;
     min-height: auto;
   }
+
+  .portfolio-services-title {
+    font-size: 36px;
+  }
+
+  .portfolio-services-section-title {
+    font-size: 26px;
+  }
+
+  .portfolio-service-card {
+    width: 100%;
+    min-height: auto;
+  }
 }
 
 /* View Transitions */
@@ -399,6 +482,7 @@ body::-webkit-scrollbar {
   from {
     transform: translateX(100vw) translateY(-10vh) rotate(30deg) scale(0.95);
   }
+
   to {
     transform: translateX(0) translateY(0) rotate(0deg) scale(1);
   }
@@ -409,6 +493,7 @@ body::-webkit-scrollbar {
   from {
     transform: translateX(0) translateY(0) rotate(0deg) scale(1);
   }
+
   to {
     transform: translateX(100vw) translateY(-10vh) rotate(30deg) scale(0.95);
   }

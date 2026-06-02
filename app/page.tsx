@@ -1,8 +1,11 @@
 import Image from "next/image";
-import { PageCard } from "./components/pageCard";
-import { PageNav } from "./components/pageNav";
-import { MediaPanel, MediaSection } from "./components/mediaPanel";
-import { featuredTechStacks } from "./data/portfolioData";
+import {
+  PageCard,
+  PageNav,
+  MediaPanel,
+  type MediaSection,
+} from "./_components";
+import { featuredTechStacks } from "./_lib";
 
 export default function Home() {
   const homeMediaSections: MediaSection[] = [
@@ -23,6 +26,7 @@ export default function Home() {
       number: "02",
       label: "services",
       iconSrc: "/dashicons_portfolio.svg",
+      linkHref: "/services",
       priority: true,
     },
   ];

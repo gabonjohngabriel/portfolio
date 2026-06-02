@@ -1,8 +1,11 @@
 import Image from "next/image";
-import { PageCard } from "../../components/pageCard";
-import { PageNav } from "../../components/pageNav";
-import { MediaPanel, MediaSection } from "../../components/mediaPanel";
-import { organizations, socials } from "../../data/portfolioData";
+import {
+  PageCard,
+  PageNav,
+  MediaPanel,
+  type MediaSection,
+} from "../../_components";
+import { organizations, socials } from "../../_lib";
 
 /* Organizations & Involvement Page */
 export default function Orgs() {
@@ -28,7 +31,7 @@ export default function Orgs() {
               {/* HEADER */}
               <PageNav backHref="/about" activePage="about" />
 
-              {/* Scrollable Main Content Container */}
+              {/* MAIN CONTENT */}
               <div className="portfolio-main-copy portfolio-scroll-area">
                 {/* ORGANIZATIONS & INVOLVEMENT SECTION */}
                 <div className="portfolio-section-block">
@@ -43,15 +46,15 @@ export default function Orgs() {
                         key={org.label}
                         className="portfolio-org-card items-start justify-center bg-[#ff7d00] shadow-sm hover:-translate-y-1 transition-all duration-300 ease-out p-6 rounded-2xl select-none"
                       >
-                        {/* Organization Name */}
+                        {/* ORG NAME */}
                         <h2 className="text-left leading-[1.1] text-[16px] sm:text-[18px] text-[#ffffff] mt-2">
                           {org.label}
                         </h2>
 
-                        {/* Position Description */}
-                        <p className="text-left leading-normal text-[12px] sm:text-[14px] text-[#ffffff]/90 whitespace-pre-line font-regular">
+                        {/* POSITION */}
+                        <p className="text-left leading-[1] text-[12px] sm:text-[14px] text-[#ffffff]/90 whitespace-pre-line font-regular">
                           {Array.isArray(org.position)
-                            ? org.position.join("\n")
+                            ? org.position.join("\n\n")
                             : org.position}
                         </p>
                       </div>
@@ -65,7 +68,7 @@ export default function Orgs() {
                     Socials
                   </h2>
 
-                  {/* Clickable interactive social networks grid */}
+                  {/* GRID */}
                   <div className="portfolio-stack-grid flex flex-wrap">
                     {socials.map((social) => (
                       <a
@@ -75,7 +78,7 @@ export default function Orgs() {
                         rel="noopener noreferrer"
                         className="portfolio-stack-item mt-2 flex flex-col items-center group cursor-pointer"
                       >
-                        {/* Brand Icon with micro hover scaling animation */}
+                        {/* ICON */}
                         <div className="relative transition-transform duration-300 ease-out group-hover:scale-110">
                           <Image
                             src={social.src}
@@ -86,7 +89,7 @@ export default function Orgs() {
                           />
                         </div>
 
-                        {/* Label */}
+                        {/* LABEL */}
                         <p className="text-center text-[12px] md:text-[14px] tracking-[-0.5px] text-[#001524] select-none font-regular mt-1">
                           {social.label}
                         </p>
@@ -97,7 +100,7 @@ export default function Orgs() {
               </div>
             </div>
 
-            {/* RIGHT PANEL - Unified Visual Graphic Column */}
+            {/* RIGHT PANEL */}
             <MediaPanel sections={orgsMediaSections} arrowSize={48} />
           </div>
         </div>

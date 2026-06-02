@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { SkillItem } from "../data/portfolioData";
+import { SkillItem } from "../_lib/portfolioData";
 
-interface TechStackGridProps {
+export interface TechStackGridProps {
   subtitle?: string;
   items: SkillItem[];
 }

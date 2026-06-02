@@ -1,13 +1,12 @@
 import Link from "next/link";
-import { PageCard } from "../components/pageCard";
-import { PageNav } from "../components/pageNav";
-import { MediaPanel, MediaSection } from "../components/mediaPanel";
-import { TechStackGrid } from "../components/techStackGrid";
 import {
-  languages,
-  frameworksAndLibraries,
-  tools,
-} from "../data/portfolioData";
+  PageCard,
+  PageNav,
+  MediaPanel,
+  type MediaSection,
+  TechStackGrid,
+} from "../_components";
+import { languages, frameworksAndLibraries, tools } from "../_lib";
 
 /* About Page */
 export default function About() {

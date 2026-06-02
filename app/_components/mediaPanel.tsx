@@ -12,27 +12,12 @@ export interface MediaSection {
   priority?: boolean;
 }
 
-interface MediaPanelProps {
-  /**
-   * The list of media sections to render in the panel.
-   * If there are multiple items, they will automatically split into equal rows (e.g., Home Page).
-   * If there is a single item, it will span the full height (e.g., About and Orgs Pages).
-   */
+export interface MediaPanelProps {
   sections: MediaSection[];
-  /**
-   * Custom className to extend styling (e.g., portfolio-media-stack-home).
-   */
   className?: string;
-  /**
-   * Size of the right-hand action arrow. Defaults to 48.
-   */
   arrowSize?: number;
 }
 
-/**
- * MediaPanel - Renders the graphical visual panel of the portfolio.
- * Optimized with Next.js Image component and optional View Transitions for seamless page routing.
- */
 export function MediaPanel({
   sections,
   className = "",
@@ -45,10 +30,10 @@ export function MediaPanel({
       className={`portfolio-media-stack ${isHome ? "portfolio-media-stack-home" : ""} ${className}`}
     >
       {sections.map((sec, idx) => {
-        // Inner content card rendering
+        // CARD
         const content = (
           <div className="relative h-full w-full group overflow-hidden">
-            {/* Background Image */}
+            {/* IMAGE */}
             <Image
               src={sec.imageSrc}
               alt={sec.alt}
@@ -58,12 +43,12 @@ export function MediaPanel({
               priority={sec.priority ?? true}
             />
 
-            {/* Overlap Gradient Overlay for a polished look */}
+            {/* OVERLAY */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent opacity-60 pointer-events-none" />
 
-            {/* Panel Footer Labels */}
+            {/* FOOTER LABELS */}
             <div className="portfolio-media-labels absolute inset-x-0 bottom-0 flex items-end justify-between z-10">
-              {/* Left Group: Icon + Number & Text Label */}
+              {/* ICON, NUMBER, LABEL */}
               <div className="flex items-center gap-4 text-white">
                 <Image
                   src={sec.iconSrc}
@@ -84,7 +69,7 @@ export function MediaPanel({
                 </div>
               </div>
 
-              {/* Right Group: Action Circle Arrow */}
+              {/* ARROW */}
               <Image
                 src="/icon-park-solid_right-c.svg"
                 alt="Navigate Arrow"
@@ -96,22 +81,25 @@ export function MediaPanel({
             </div>
           </div>
         );
-
+        // If linkHref is provided, wrap the content in a Link component for navigation
         return (
           <div
             key={sec.label}
             className="relative w-full h-full"
             style={{ backgroundColor: sec.bgColor }}
           >
+            {/* LINK WRAPPER */}
             {sec.linkHref ? (
               <Link
                 href={sec.linkHref}
                 transitionTypes={["nav-forward"]}
                 className="block h-full w-full"
               >
+                {/* LINK CONTENT */}
                 {content}
               </Link>
             ) : (
+              // If no linkHref, just render the
               content
             )}
           </div>

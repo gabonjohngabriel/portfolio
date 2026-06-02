@@ -14,6 +14,12 @@ export interface SocialItem {
   href: string;
 }
 
+export interface ServiceItem {
+  iconSrc: string;
+  title: string;
+  description: string;
+}
+
 // Home Page - Featured Tech Stacks
 export const featuredTechStacks: SkillItem[] = [
   { label: "AWS", src: "/skill-icons_aws-light.svg" },
@@ -60,6 +66,20 @@ export const organizations: OrganizationItem[] = [
       "Staff Writer (2025 - Present)",
       "Feature and Lifestyle Editor (2026 - Present)",
     ],
+  },
+];
+
+// Services Page
+export const services: ServiceItem[] = [
+  {
+    iconSrc: "/tabler_code.svg",
+    title: "Web Development",
+    description: "Custom-coded, client-facing websites built from scratch",
+  },
+  {
+    iconSrc: "/iconoir_design-nib-solid.svg",
+    title: "UI/UX Design",
+    description: "Custom-coded, client-facing websites built from scratch",
   },
 ];
 
