@@ -35,7 +35,7 @@ export default function Home() {
     <div className="portfolio-viewport">
       <PageCard>
         <div className="portfolio-card-shell">
-          <div className="rportfolio-card-gid">
+          <div className="portfolio-card-grid">
             {/* LEFT PANEL */}
             <div className="portfolio-left-panel">
               {/* NAV */}
