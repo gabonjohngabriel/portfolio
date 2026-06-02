@@ -2,16 +2,15 @@ import Image from "next/image";
 import {
   PageCard,
   PageNav,
-  MediaPanel,
-  type MediaSection,
+  RightPanel,
+  type RightSection,
 } from "../_components";
 import { services } from "../_lib";
 
 /* Services Page */
 export default function Services() {
-  const servicesMediaSections: MediaSection[] = [
+  const servicesMediaSections: RightSection[] = [
     {
-      imageSrc: "/services_image.svg",
       alt: "Services section graphic illustration",
       bgColor: "#15616d",
       number: "02",
@@ -25,7 +24,7 @@ export default function Services() {
     <div className="portfolio-viewport">
       <PageCard>
         <div className="portfolio-card-shell">
-          <div className="portfolio-card-grid">
+          <div className="portfolio-card-grid__no-text">
             {/* LEFT PANEL */}
             <div className="portfolio-left-panel">
               {/* NAV */}
@@ -43,7 +42,7 @@ export default function Services() {
                 {/* SUBTITLE */}
                 <p className="portfolio-services-copy text-[#001524] w-[420px] leading-[1]">
                   Driven by curiosity, I create tailored digital solutions
-                  through innovation and creativity while focusing in
+                  through innovation and creativity while focusing on
                   user-centric experiences.
                 </p>
 
@@ -104,7 +103,7 @@ export default function Services() {
             </div>
 
             {/* RIGHT PANEL - Services Visual Graphic Column */}
-            {/* <MediaPanel sections={servicesMediaSections} arrowSize={48} /> */}
+            <RightPanel sections={servicesMediaSections} arrowSize={48} />
           </div>
         </div>
       </PageCard>

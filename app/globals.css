@@ -88,6 +88,14 @@ body::-webkit-scrollbar {
   gap: clamp(12px, 3.5vmin, 48px);
 }
 
+.portfolio-card-grid__no-text {
+  display: grid;
+  height: 100%;
+  min-height: 0;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.25fr);
+  gap: clamp(12px, 3.5vmin, 48px);
+}
+
 .portfolio-left-panel {
   position: relative;
   display: flex;
