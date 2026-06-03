@@ -390,7 +390,7 @@ body::-webkit-scrollbar {
     display: flex;
     align-items: center;
     gap: clamp(8px, 1.2vmin, 12px);
-    font-family: var(--font-amoria), serif;
+    font-family: var(--font-sans), sans-serif;
     font-size: clamp(9px, 1.45vmin, 12px);
     color: #8da9c4;
     transition: all 0.3s ease;
@@ -403,7 +403,7 @@ body::-webkit-scrollbar {
 .portfolio-work-list-item.is-active .portfolio-work-list-title {
     font-style: italic;
     font-weight: 600;
-    letter-spacing: 0.05em;
+    letter-spacing: -0.05em;
 }
 
 .portfolio-work-list-item:hover:not(.cursor-not-allowed) {

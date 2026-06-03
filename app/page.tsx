@@ -79,9 +79,25 @@ export default function Home() {
                                     innovation or SaaS.
                                 </p>
 
+                                {/* ACTION BUTTONS */}
+                                <div className="portfolio-actions flex flex-wrap gap-4 mt-2">
+                                    <Link
+                                        className="portfolio-btn flex items-center justify-center rounded-full bg-[#ff7d00] px-8 py-3 text-[14px] font-semibold uppercase tracking-[0.6px] text-white transition-all hover:scale-105 hover:-translate-y-0.5 active:scale-95"
+                                        href="/contact"
+                                        transitionTypes={["nav-forward"]}>
+                                        Get In Touch
+                                    </Link>
+                                    <Link
+                                        className="portfolio-btn flex items-center justify-center rounded-full bg-[#001524] px-8 py-3 text-[14px] font-semibold uppercase tracking-[0.6px] text-white transition-all hover:scale-105 hover:-translate-y-0.5 active:scale-95"
+                                        href="/services/works"
+                                        transitionTypes={["nav-forward"]}>
+                                        View Works
+                                    </Link>
+                                </div>
+
                                 {/* TECH STACKS */}
                                 <div className="portfolio-section-block">
-                                    <h2 className="portfolio-section-title text-[#ff7d00]">
+                                    <h2 className="portfolio-section-title mt-4 text-[#ff7d00]">
                                         Technical Skills
                                     </h2>
 
@@ -105,21 +121,6 @@ export default function Home() {
                                                 </p>
                                             </div>
                                         ))}
-                                    </div>
-                                    {/* Action Buttons */}
-                                    <div className="portfolio-actions flex flex-wrap gap-4 mt-2">
-                                        <Link
-                                            className="portfolio-btn flex items-center justify-center rounded-full bg-[#ff7d00] px-8 py-3 text-[14px] font-semibold uppercase tracking-[0.6px] text-white transition-all hover:scale-105 hover:-translate-y-0.5 active:scale-95"
-                                            href="/contact"
-                                            transitionTypes={["nav-forward"]}>
-                                            Get Started
-                                        </Link>
-                                        <Link
-                                            className="portfolio-btn flex items-center justify-center rounded-full bg-[#001524] px-8 py-3 text-[14px] font-semibold uppercase tracking-[0.6px] text-white transition-all hover:scale-105 hover:-translate-y-0.5 active:scale-95"
-                                            href="/services/works"
-                                            transitionTypes={["nav-forward"]}>
-                                            View Works
-                                        </Link>
                                     </div>
                                 </div>
                             </div>
