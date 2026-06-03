@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   PageCard,
   PageNav,
@@ -49,17 +50,18 @@ export default function Services() {
                 {/* BUTTONS */}
                 <div className="portfolio-actions flex flex-wrap mt-4">
                   <a
-                    className="portfolio-btn-outline flex items-center justify-center rounded-full border-2 border-[var(--brand-teal)] bg-transparent font-bold uppercase tracking-[0.08em] text-[var(--brand-teal)] transition-all hover:bg-[var(--brand-teal)] hover:text-white hover:scale-105 hover:-translate-y-0.5 active:scale-95"
+                    className="portfolio-btn-outline flex items-center justify-center rounded-full border-2 border-[var(--brand-teal)] bg-transparent font-semibold uppercase tracking-[0.08em] text-[var(--brand-teal)] transition-all hover:bg-[var(--brand-teal)] hover:text-white hover:scale-105 hover:-translate-y-0.5 active:scale-95"
                     href="#"
                   >
                     Get In Touch
                   </a>
-                  <a
-                    className="portfolio-btn-solid flex items-center justify-center rounded-full bg-[#001524] font-bold uppercase tracking-[0.08em] text-white transition-all hover:scale-105 hover:-translate-y-0.5 active:scale-95"
-                    href="#"
+                  <Link
+                    className="portfolio-btn-solid flex items-center justify-center rounded-full bg-[#001524] font-semibold uppercase tracking-[0.08em] text-white transition-all hover:scale-105 hover:-translate-y-0.5 active:scale-95"
+                    href="/services/works"
+                    transitionTypes={["nav-forward"]}
                   >
                     View Works
-                  </a>
+                  </Link>
                 </div>
 
                 {/* SERVICES & SOLUTIONS SECTION */}
@@ -87,7 +89,7 @@ export default function Services() {
                         </div>
 
                         {/* TITLE */}
-                        <h3 className="portfolio-service-card-title text-white font-bold uppercase leading-[0.95]">
+                        <h3 className="portfolio-service-card-title text-white font-semibold uppercase leading-[0.95]">
                           {service.title}
                         </h3>
 

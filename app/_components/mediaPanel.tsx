@@ -63,7 +63,7 @@ export function MediaPanel({
                   <h1 className="portfolio-media-number font-display">
                     {sec.number}
                   </h1>
-                  <p className="portfolio-media-name font-bold uppercase tracking-[0.05em] text-[11px] sm:text-[14px]">
+                  <p className="portfolio-media-name font-semibold uppercase tracking-[0.05em] text-[11px] sm:text-[14px]">
                     {sec.label}
                   </p>
                 </div>

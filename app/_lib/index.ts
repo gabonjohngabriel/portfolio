@@ -3,11 +3,13 @@ export {
   type OrganizationItem,
   type SocialItem,
   type ServiceItem,
+  type WorkItem,
   featuredTechStacks,
   languages,
   frameworksAndLibraries,
   tools,
   organizations,
   services,
+  works,
   socials,
 } from "./portfolioData";

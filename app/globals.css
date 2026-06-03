@@ -320,6 +320,161 @@ body::-webkit-scrollbar {
   font-size: clamp(11px, 1.1vmin, 12px);
 }
 
+/* Services/Works Page - Works layout grid */
+.portfolio-works-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(180px, 0.25fr);
+  gap: clamp(16px, 3vmin, 36px);
+  align-items: center;
+  margin-top: clamp(14px, 2vmin, 24px);
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .portfolio-works-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 20px;
+  }
+}
+
+/* Services/Works Page - Project Showcase */
+.portfolio-work-showcase {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  background: var(--brand-teal);
+  border-radius: clamp(14px, 2vmin, 22px);
+  overflow: hidden;
+  min-height: clamp(220px, 30vw, 320px);
+  box-shadow: 0 15px 30px -10px rgba(21, 97, 109, 0.3);
+}
+
+.portfolio-work-showcase-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: transparent;
+  padding: clamp(20px, 3vmin, 36px);
+  z-index: 2;
+  flex: 0 0 auto;
+  width: clamp(160px, 40%, 260px);
+}
+
+.portfolio-work-number {
+  font-size: clamp(40px, min(5vw, 7vh), 56px);
+  color: white;
+  line-height: 0.95;
+}
+
+.portfolio-work-title {
+  font-size: clamp(14px, min(2vw, 3vh), 18px);
+  color: white;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.portfolio-work-desc {
+  font-size: clamp(11px, min(1.1vw, 1.6vh), 14px);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.45;
+  margin-top: clamp(8px, 1vmin, 14px);
+}
+
+.portfolio-work-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: clamp(12px, 1.6vmin, 20px);
+  padding: clamp(6px, 0.9vmin, 10px) clamp(20px, 3vmin, 32px);
+  background: white;
+  border: 2px solid white;
+  border-radius: 9999px;
+  color: var(--brand-teal);
+  font-weight: 700;
+  font-size: clamp(9px, 1vmin, 12px);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  align-self: flex-start;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-work-btn:hover {
+  background: transparent;
+  color: white;
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-work-btn:active {
+  transform: scale(0.95);
+}
+
+.portfolio-work-preview {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  padding: clamp(12px, 2.2vmin, 24px);
+  display: flex;
+}
+
+.portfolio-work-image-container {
+  position: relative;
+  flex: 1;
+  border-radius: clamp(8px, 1.5vmin, 14px);
+  overflow: hidden;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+  background: #ffffff;
+}
+
+/* WORK LIST */
+.portfolio-work-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1.2vmin, 16px);
+  justify-content: center;
+}
+
+.portfolio-work-list-item {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 1.2vmin, 14px);
+  font-size: clamp(13px, 1.45vmin, 18px);
+  color: #8da9c4;
+  transition: all 0.3s ease;
+}
+
+.portfolio-work-list-item.is-active {
+  color: var(--brand-teal);
+}
+
+.portfolio-work-list-item.is-active .portfolio-work-list-title {
+  font-family: var(--font-amoria), serif;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.portfolio-work-list-item:hover:not(.cursor-not-allowed) {
+  transform: translateX(4px);
+  color: var(--brand-teal);
+}
+
+.portfolio-work-list-num {
+  font-weight: 500;
+  min-width: clamp(14px, 1.5vmin, 18px);
+}
+
+.portfolio-work-list-dash {
+  opacity: 0.5;
+}
+
+.portfolio-work-list-title {
+  font-weight: 500;
+}
+
 /* About Page - Organizations & Involvement */
 .portfolio-org-grid {
   margin-top: clamp(12px, 1.2vmin, 16px);
@@ -509,6 +664,7 @@ body::-webkit-scrollbar {
 
 /* Page Card Hold Animation */
 @keyframes page-card-hold {
+
   from,
   to {
     opacity: 1;
@@ -518,6 +674,7 @@ body::-webkit-scrollbar {
 
 /* Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
+
   ::view-transition-group(.page-card-forward),
   ::view-transition-group(.page-card-back),
   ::view-transition-old(.page-card-forward),

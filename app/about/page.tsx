@@ -80,7 +80,7 @@ export default function About() {
                 {/* BUTTONS */}
                 <div className="portfolio-actions flex flex-wrap gap-4 mt-4">
                   <a
-                    className="flex items-center justify-center rounded-full bg-[#ff7d00] px-8 py-3 text-[12px] font-bold uppercase tracking-[0.6px] text-white transition-all hover:scale-105 hover:-translate-y-0.5 active:scale-95 shadow-sm"
+                    className="flex items-center justify-center rounded-full bg-[#ff7d00] px-8 py-3 text-[12px] font-semibold uppercase tracking-[0.6px] text-white transition-all hover:scale-105 hover:-translate-y-0.5 active:scale-95 shadow-sm"
                     href="/misc/Resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -88,7 +88,7 @@ export default function About() {
                     Download CV
                   </a>
                   <a
-                    className="flex items-center justify-center rounded-full bg-[#001524] px-8 py-3 text-[12px] font-bold uppercase tracking-[0.6px] text-white transition-all hover:scale-105 hover:-translate-y-0.5 active:scale-95 shadow-sm"
+                    className="flex items-center justify-center rounded-full bg-[#001524] px-8 py-3 text-[12px] font-semibold uppercase tracking-[0.6px] text-white transition-all hover:scale-105 hover:-translate-y-0.5 active:scale-95 shadow-sm"
                     href="https://www.linkedin.com/in/gabrielgabon/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -121,7 +121,7 @@ export default function About() {
                   <Link
                     href="/about/orgs"
                     transitionTypes={["nav-forward"]}
-                    className="inline-flex items-center gap-2 text-[var(--brand-orange)] font-bold uppercase tracking-[0.05em] text-[14px] hover:translate-x-1 transition-transform"
+                    className="inline-flex items-center gap-2 text-[var(--brand-orange)] font-semibold uppercase tracking-[0.05em] text-[14px] hover:translate-x-1 transition-transform"
                   >
                     Organizations & Involvement &rarr;
                   </Link>

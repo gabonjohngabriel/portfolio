@@ -20,6 +20,14 @@ export interface ServiceItem {
   description: string;
 }
 
+export interface WorkItem {
+  number: string;
+  title: string;
+  description: string;
+  imageSrc: string;
+  href?: string;
+}
+
 // Home Page - Featured Tech Stacks
 export const featuredTechStacks: SkillItem[] = [
   { label: "AWS", src: "/skill-icons_aws-light.svg" },
@@ -80,6 +88,24 @@ export const services: ServiceItem[] = [
     iconSrc: "/iconoir_design-nib-solid.svg",
     title: "UI/UX Design",
     description: "Custom-coded, client-facing websites built from scratch",
+  },
+];
+
+// Services/Works Page
+export const works: WorkItem[] = [
+  {
+    number: "01",
+    title: "Flylet",
+    description:
+      "Flylet is a social note-sharing app where ideas meet locations. Pin notes to interactive maps, comment on discoveries, and connect with creators near you.",
+    imageSrc: "/flylet_prev.svg",
+    href: "https://flylet.app/",
+  },
+  {
+    number: "02",
+    title: "More Projects Soon",
+    description: "",
+    imageSrc: "",
   },
 ];
 

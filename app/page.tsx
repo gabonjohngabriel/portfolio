@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   PageCard,
   PageNav,
@@ -105,17 +106,18 @@ export default function Home() {
               {/* Action Buttons */}
               <div className="portfolio-actions flex flex-wrap gap-4 mt-4">
                 <a
-                  className="flex items-center justify-center rounded-full bg-[#ff7d00] px-8 py-3 text-[14px] font-bold uppercase tracking-[0.6px] text-white transition-all hover:scale-105 hover:-translate-y-0.5 shadow-sm active:scale-95"
+                  className="flex items-center justify-center rounded-full bg-[#ff7d00] px-8 py-3 text-[14px] font-semibold uppercase tracking-[0.6px] text-white transition-all hover:scale-105 hover:-translate-y-0.5 shadow-sm active:scale-95"
                   href="#"
                 >
                   Get Started
                 </a>
-                <a
-                  className="flex items-center justify-center rounded-full bg-[#001524] px-8 py-3 text-[14px] font-bold uppercase tracking-[0.6px] text-white transition-all hover:scale-105 hover:-translate-y-0.5 shadow-sm active:scale-95"
-                  href="#"
+                <Link
+                  className="flex items-center justify-center rounded-full bg-[#001524] px-8 py-3 text-[14px] font-semibold uppercase tracking-[0.6px] text-white transition-all hover:scale-105 hover:-translate-y-0.5 shadow-sm active:scale-95"
+                  href="/services/works"
+                  transitionTypes={["nav-forward"]}
                 >
                   View Works
-                </a>
+                </Link>
               </div>
             </div>
 
