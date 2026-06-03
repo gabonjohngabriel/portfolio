@@ -91,7 +91,7 @@ export default function Home() {
                                             <div
                                                 key={stack.label}
                                                 className="portfolio-stack-item flex flex-col items-center group cursor-default">
-                                                <div className="relative transition-transform duration-750 cubic-bezier(0.68, -0.55, 0.265, 1.55) group-hover:scale-120">
+                                                <div className="relative transition-transform duration-750 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-115">
                                                     <Image
                                                         src={stack.src}
                                                         alt={`${stack.label} logo`}
