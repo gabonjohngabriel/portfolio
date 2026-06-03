@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# AGENTS
+.agents/
+.gemini/
+.kiro/
+.cursor/
+.claude/

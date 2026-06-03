@@ -9,6 +9,7 @@ import {
     type RightSection,
 } from "../../_components";
 import { works } from "../../_lib";
+import Link from "next/link";
 
 /* Works Page */
 export default function Works() {
@@ -43,48 +44,6 @@ export default function Works() {
                             {/* Scrollable Main Content */}
                             <div className="portfolio-main-copy portfolio-scroll-area">
                                 <div className="portfolio-works-layout">
-                                    {/* WORK SHOWCASE */}
-                                    <div className="portfolio-work-showcase">
-                                        {/* TEAL CARD */}
-                                        <div className="portfolio-work-showcase-card">
-                                            <span className="portfolio-work-number font-display">
-                                                {featuredWork.number}
-                                            </span>
-                                            <h2 className="portfolio-work-title font-display">
-                                                {featuredWork.title}
-                                            </h2>
-                                            <p className="portfolio-work-desc">
-                                                {featuredWork.description}
-                                            </p>
-                                            {featuredWork.href && (
-                                                <a
-                                                    className="portfolio-work-btn"
-                                                    href={featuredWork.href}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer">
-                                                    VISIT
-                                                </a>
-                                            )}
-                                        </div>
-
-                                        {/* PREVIEW IMAGE */}
-                                        {featuredWork.imageSrc && (
-                                            <div className="portfolio-work-preview">
-                                                <div className="portfolio-work-image-container">
-                                                    <Image
-                                                        src={
-                                                            featuredWork.imageSrc
-                                                        }
-                                                        alt={`${featuredWork.title} preview`}
-                                                        fill
-                                                        className="object-cover"
-                                                        priority
-                                                    />
-                                                </div>
-                                            </div>
-                                        )}
-                                    </div>
-
                                     {/* PROJECT LIST */}
                                     <div className="portfolio-work-list">
                                         {works.map((work, idx) => {
@@ -105,18 +64,60 @@ export default function Works() {
                                                             );
                                                         }
                                                     }}>
-                                                    <span className="portfolio-work-list-num">
+                                                    <p className="portfolio-work-list-num mr-1">
                                                         {idx + 1}
-                                                    </span>
-                                                    <span className="portfolio-work-list-dash">
-                                                        —
-                                                    </span>
-                                                    <span className="portfolio-work-list-title">
+                                                    </p>
+                                                    <p className="portfolio-work-list-dash mr-1">
+                                                        ——
+                                                    </p>
+                                                    <p className="portfolio-work-list-title">
                                                         {work.title}
-                                                    </span>
+                                                    </p>
                                                 </div>
                                             );
                                         })}
+                                    </div>
+
+                                    {/* WORK SHOWCASE */}
+                                    <div className="portfolio-work-showcase">
+                                        {/* TEAL CARD */}
+                                        <div className="portfolio-work-showcase-card">
+                                            <span className="portfolio-work-number font-display">
+                                                {featuredWork.number}
+                                            </span>
+                                            <h2 className="portfolio-work-title font-display">
+                                                {featuredWork.title}
+                                            </h2>
+                                            <p className="portfolio-work-desc">
+                                                {featuredWork.description}
+                                            </p>
+                                            {featuredWork.href && (
+                                                <Link
+                                                    className="portfolio-btn flex items-center justify-center rounded-full bg-[white] font-bold uppercase tracking-[0.08em] text-[10px] text-[var(--brand-teal)]"
+                                                    href={featuredWork.href}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer">
+                                                    VISIT
+                                                </Link>
+                                            )}
+                                        </div>
+
+                                        {/* PREVIEW IMAGE */}
+                                        {featuredWork.imageSrc && (
+                                            <div className="portfolio-work-preview">
+                                                <div className="portfolio-work-image-container">
+                                                    <Image
+                                                        src={
+                                                            featuredWork.imageSrc
+                                                        }
+                                                        alt={`${featuredWork.title} preview`}
+                                                        fill
+                                                        className="object-cover"
+                                                        priority
+                                                    />
+                                                </div>
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             </div>
