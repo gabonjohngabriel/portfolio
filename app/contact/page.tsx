@@ -60,20 +60,30 @@ export default function Contact() {
                                 </div>
 
                                 {/* SUBTITLE */}
-                                <p className="portfolio-services-copy text-[#001524]/90 max-w-[480px] w-full leading-[1.45] mt-4">
-                                    Bring your ideas and concepts into reality!
-                                    Feel free to reach out to me directly or
-                                    connect through my socials.
-                                </p>
+                                <span className="portfolio-services-copy text-[#001524]/90 max-w-[480px] w-full leading-[1.45] mt-4">
+                                    <p>
+                                        Bring your ideas and concepts into
+                                        reality! Feel free to reach out to me
+                                        directly or connect through my socials.
+                                    </p>
+                                    <br />
+                                    <p>
+                                        Currently, I am not available due to
+                                        academic reasons. If you&apos;re decided
+                                        to contact me, please leave a message
+                                        and I&apos;ll get back to you as soon as
+                                        possible.
+                                    </p>
+                                </span>
 
                                 {/* CONTACT DETAILS (EMAIL & SOCIALS) */}
-                                <div className="grid grid-cols-2 gap-8 mt-8">
+                                <div className="grid grid-cols-2 gap-8 mt-4">
                                     {/* EMAIL CONTACT */}
                                     <div className="flex flex-col">
                                         <h2 className="portfolio-section-title text-[var(--brand-orange)]">
                                             Email
                                         </h2>
-                                        <div className="mt-2 text-[#001524] leading-[1.25] text-[16px] break-words">
+                                        <div className="mt-2 text-[#001524] leading-[1.25] text-[14px] break-words">
                                             <a
                                                 href="mailto:gabonjohngabriel@gmail.com"
                                                 target="_blank"
@@ -92,7 +102,7 @@ export default function Contact() {
                                         <h2 className="portfolio-section-title text-[var(--brand-orange)] ">
                                             Socials
                                         </h2>
-                                        <div className="flex items-center gap-3 mt-3">
+                                        <div className="flex items-center gap-2 mt-2">
                                             {orderedSocials.map((social) => (
                                                 <a
                                                     key={social.label}

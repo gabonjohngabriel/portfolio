@@ -37,7 +37,7 @@ export function MediaPanel({
                             src={sec.imageSrc}
                             alt={sec.alt}
                             fill
-                            className="object-cover object-[center_25%] transition-transform duration-700 ease-out group-hover:scale-105"
+                            className="object-cover object-[75%_50%] transition-transform duration-1200 ease-out group-hover:scale-105"
                             sizes="(min-width: 1024px) 629px, 100vw"
                             priority={sec.priority ?? true}
                         />

@@ -100,7 +100,7 @@ export default function Works() {
                                                     href={featuredWork.href}
                                                     target="_blank"
                                                     rel="noopener noreferrer">
-                                                    VISIT
+                                                    VISIT {featuredWork.title}
                                                 </Link>
                                             )}
                                         </div>

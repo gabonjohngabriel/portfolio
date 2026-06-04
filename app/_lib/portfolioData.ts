@@ -70,10 +70,7 @@ export const organizations: OrganizationItem[] = [
     },
     {
         label: "CURSOR Publication",
-        position: [
-            "Staff Writer (2025 - Present)",
-            "Feature and Lifestyle Editor (2026 - Present)",
-        ],
+        position: ["Staff Writer (2025 - Present)"],
     },
 ];
 
@@ -85,7 +82,7 @@ export const services: ServiceItem[] = [
         description: "Custom-coded, client-facing websites built from scratch.",
     },
     {
-        iconSrc: "/iconoir_design-nib-solid.svg",
+        iconSrc: "/eos-icons_application-outlined.svg",
         title: "Software Development",
         description:
             "Building scalable, efficient, and maintainable software solutions.",
