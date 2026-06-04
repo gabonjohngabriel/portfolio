@@ -73,13 +73,12 @@ export default function About() {
                                 </h1>
 
                                 {/* DETAILS */}
-                                <p className="portfolio-copy max-w-xl text-[#001524] mt-4 text-[14px] sm:text-[16px]">
-                                    Bachelor of Science in Information
-                                    Technology
+                                <p className="portfolio-copy max-w-xl text-[#001524] mt-4 text-[14px]">
+                                    2nd Year BSIT Student
                                     <br />
-                                    <span className="text-[12px] sm:text-[14px] text-[#001524] italic">
-                                        Bulacan State University - Malolos
-                                        Campus
+                                    <span className="text-[12px] text-[#001524] italic">
+                                        Aspiring Software Engineer / Full Stack
+                                        Developer / UI/UX Designer
                                     </span>
                                 </p>
 

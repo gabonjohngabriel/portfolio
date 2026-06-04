@@ -8,6 +8,12 @@ export interface OrganizationItem {
     position: string | string[];
 }
 
+export interface ExperienceItem {
+    position: string;
+    organization: string;
+    date: string;
+}
+
 export interface SocialItem {
     label: string;
     src: string;
@@ -71,6 +77,14 @@ export const organizations: OrganizationItem[] = [
     {
         label: "CURSOR Publication",
         position: ["Staff Writer (2025 - Present)"],
+    },
+];
+
+export const experiences: ExperienceItem[] = [
+    {
+        position: "BS Information Technology",
+        organization: "Bulacan State University",
+        date: "2025 - Present",
     },
 ];
 
