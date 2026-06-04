@@ -5,8 +5,8 @@ import { useState } from "react";
 import {
     PageCard,
     PageNav,
-    RightPanel,
-    type RightSection,
+    MediaSmallPanel,
+    type MediaSmallPanelSection,
 } from "../../_components";
 import { works } from "../../_lib";
 import Link from "next/link";
@@ -15,8 +15,9 @@ import Link from "next/link";
 export default function Works() {
     const [activeWorkIdx, setActiveWorkIdx] = useState(0);
 
-    const worksMediaSections: RightSection[] = [
+    const worksMediaSections: MediaSmallPanelSection[] = [
         {
+            imageSrc: "/services_image.svg",
             alt: "Services section graphic illustration",
             bgColor: "#15616d",
             number: "02",
@@ -43,6 +44,11 @@ export default function Works() {
 
                             {/* Scrollable Main Content */}
                             <div className="portfolio-main-copy portfolio-scroll-area">
+                                {/* TITLE */}
+                                <h1 className="portfolio-services-title mb-6 text-[var(--brand-teal)]">
+                                    <span className="block">Projects</span>
+                                </h1>
+
                                 <div className="portfolio-works-layout">
                                     {/* PROJECT LIST */}
                                     <div className="portfolio-work-list">
@@ -51,7 +57,7 @@ export default function Works() {
                                                 idx === activeWorkIdx;
                                             return (
                                                 <div
-                                                    key={work.number}
+                                                    key={work.id}
                                                     className={`portfolio-work-list-item ${
                                                         isActive
                                                             ? "is-active"
@@ -65,7 +71,7 @@ export default function Works() {
                                                         }
                                                     }}>
                                                     <p className="portfolio-work-list-num mr-1">
-                                                        {idx + 1}
+                                                        {work.id}
                                                     </p>
                                                     <p className="portfolio-work-list-dash mr-1">
                                                         ——
@@ -82,9 +88,6 @@ export default function Works() {
                                     <div className="portfolio-work-showcase">
                                         {/* TEAL CARD */}
                                         <div className="portfolio-work-showcase-card">
-                                            <span className="portfolio-work-number font-display">
-                                                {featuredWork.number}
-                                            </span>
                                             <h2 className="portfolio-work-title font-display">
                                                 {featuredWork.title}
                                             </h2>
@@ -124,7 +127,7 @@ export default function Works() {
                         </div>
 
                         {/* RIGHT PANEL - Services Visual Graphic Column */}
-                        <RightPanel
+                        <MediaSmallPanel
                             sections={worksMediaSections}
                             arrowSize={48}
                         />

@@ -1,25 +1,31 @@
 import Image from "next/image";
-import Link from "next/link";
 import {
     PageCard,
     PageNav,
-    RightPanel,
-    type RightSection,
+    MediaSmallPanel,
+    type MediaSmallPanelSection,
 } from "../_components";
 import { socials } from "../_lib";
 
 /* Contact Page */
 export default function Contact() {
-    const contactMediaSections: RightSection[] = [
+    const contactMediaSections: MediaSmallPanelSection[] = [
         {
+            imageSrc: "",
             alt: "Contact section graphic",
             bgColor: "#ff7d00", // Brand Orange
             number: "03",
             label: "contact",
-            iconSrc: "/mdi_about.svg",
+            iconSrc: "/dashicons_portfolio.svg",
             priority: true,
         },
     ];
+
+    const orderedSocials = [
+        socials.find((s) => s.label === "GitHub"),
+        socials.find((s) => s.label === "Facebook"),
+        socials.find((s) => s.label === "LinkedIn"),
+    ].filter(Boolean) as typeof socials;
 
     return (
         <div className="portfolio-viewport select-none">
@@ -32,70 +38,85 @@ export default function Contact() {
                             <PageNav backHref="/" activePage="contact" />
 
                             {/* Scrollable Main Content */}
-                            <div className="portfolio-main-copy portfolio-scroll-area">
+                            <div className="portfolio-main-copy portfolio-main-copy-contact portfolio-scroll-area">
                                 {/* TITLE */}
-                                <h1 className="portfolio-services-title text-[var(--brand-orange)]">
-                                    <span className="block">Get In</span>
-                                    <span className="block">Touch</span>
-                                </h1>
-
-                                {/* SUBTITLE */}
-                                <p className="portfolio-services-copy text-[#001524] max-w-[420px] w-full leading-[1.45]">
-                                    Have an interesting project, job
-                                    opportunity, or just want to chat? Feel free
-                                    to reach out to me directly or connect via
-                                    my socials.
-                                </p>
-
-                                {/* EMAIL CONTACT */}
-                                <div className="portfolio-section-block">
-                                    <h2 className="portfolio-section-title text-[var(--brand-orange)]">
-                                        Email
-                                    </h2>
-                                    <div className="portfolio-actions flex flex-wrap gap-4 mt-2">
-                                        <a
-                                            className="portfolio-btn flex items-center px-8 py-3 justify-center rounded-full bg-[var(--brand-orange)] font-semibold uppercase tracking-[0.08em] text-[white] transition-all hover:scale-105 hover:-translate-y-0.5 active:scale-95 shadow-sm"
-                                            href="mailto:gabonjohngabriel@gmail.com"
-                                            target="_blank"
-                                            rel="noopener noreferrer">
-                                            gabonjohngabriel@gmail.com
-                                        </a>
-                                    </div>
+                                <div className="flex items-center gap-4 sm:gap-6">
+                                    <Image
+                                        src="/mynaui_send.svg"
+                                        alt="Send icon"
+                                        width={80}
+                                        height={80}
+                                        className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain shrink-0"
+                                        priority
+                                    />
+                                    <h1 className="portfolio-services-title leading-[0.9] tracking-[-0.03em]">
+                                        <span className="block text-[var(--brand-orange)]">
+                                            Let's Start
+                                        </span>
+                                        <span className="block text-[#001524]">
+                                            Your Project
+                                        </span>
+                                    </h1>
                                 </div>
 
-                                {/* SOCIALS */}
-                                <div className="portfolio-section-block">
-                                    <h2 className="portfolio-section-title text-[var(--brand-orange)]">
-                                        Social Networks
-                                    </h2>
-                                    <div className="portfolio-stack-grid flex flex-wrap mt-4">
-                                        {socials.map((social) => (
+                                {/* SUBTITLE */}
+                                <p className="portfolio-services-copy text-[#001524]/90 max-w-[480px] w-full leading-[1.45] mt-4">
+                                    Bring your ideas and concepts into reality!
+                                    Feel free to reach out to me directly or
+                                    connect through my socials.
+                                </p>
+
+                                {/* CONTACT DETAILS (EMAIL & SOCIALS) */}
+                                <div className="grid grid-cols-2 gap-8 mt-8">
+                                    {/* EMAIL CONTACT */}
+                                    <div className="flex flex-col">
+                                        <h2 className="portfolio-section-title text-[var(--brand-orange)]">
+                                            Email
+                                        </h2>
+                                        <div className="mt-2 text-[#001524] leading-[1.25] text-[16px] break-words">
                                             <a
-                                                key={social.label}
-                                                href={social.href}
+                                                href="mailto:gabonjohngabriel@gmail.com"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="portfolio-stack-item flex flex-col items-center group cursor-pointer">
-                                                <div className="relative transition-transform duration-300 ease-out group-hover:scale-110">
+                                                className="hover:text-[var(--brand-orange)] transition-colors">
+                                                gabonjohngabriel
+                                                <span className="block">
+                                                    @gmail.com
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    {/* SOCIALS */}
+                                    <div className="flex flex-col">
+                                        <h2 className="portfolio-section-title text-[var(--brand-orange)] ">
+                                            Socials
+                                        </h2>
+                                        <div className="flex items-center gap-3 mt-3">
+                                            {orderedSocials.map((social) => (
+                                                <a
+                                                    key={social.label}
+                                                    href={social.href}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="hover:scale-110 active:scale-95 transition-transform duration-200"
+                                                    aria-label={social.label}>
                                                     <Image
                                                         src={social.src}
                                                         alt={`${social.label} icon`}
-                                                        width={48}
-                                                        height={48}
+                                                        width={36}
+                                                        height={36}
                                                         className="object-contain"
                                                     />
-                                                </div>
-                                                <p className="text-center text-[12px] md:text-[14px] tracking-[-0.5px] text-[#001524] font-regular mt-1">
-                                                    {social.label}
-                                                </p>
-                                            </a>
-                                        ))}
+                                                </a>
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         {/* RIGHT PANEL - Services Visual Graphic Column */}
-                        <RightPanel
+                        <MediaSmallPanel
                             sections={contactMediaSections}
                             arrowSize={48}
                         />

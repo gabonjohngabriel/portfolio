@@ -3,15 +3,16 @@ import Link from "next/link";
 import {
     PageCard,
     PageNav,
-    RightPanel,
-    type RightSection,
+    MediaSmallPanel,
+    type MediaSmallPanelSection,
 } from "../_components";
 import { services } from "../_lib";
 
 /* Services Page */
 export default function Services() {
-    const servicesMediaSections: RightSection[] = [
+    const servicesMediaSections: MediaSmallPanelSection[] = [
         {
+            imageSrc: "/services_image.svg",
             alt: "Services section graphic illustration",
             bgColor: "#15616d",
             number: "02",
@@ -35,13 +36,13 @@ export default function Services() {
                             <div className="portfolio-main-copy portfolio-scroll-area">
                                 {/* TITLE */}
                                 <h1 className="portfolio-services-title text-[var(--brand-teal)]">
-                                    <span className="block">Crafting</span>
-                                    <span className="block">Quality</span>
-                                    <span className="block">Standards</span>
+                                    <span className="block">
+                                        Crafting Quality Standards
+                                    </span>
                                 </h1>
 
                                 {/* SUBTITLE */}
-                                <p className="portfolio-services-copy text-[#001524] max-w-[420px] w-full leading-[1]">
+                                <p className="portfolio-services-copy text-[#001524] max-w-[620px] w-full mt-2">
                                     Driven by curiosity, I create tailored
                                     digital solutions through innovation and
                                     creativity while focusing on user-centric
@@ -75,7 +76,7 @@ export default function Services() {
                                         {services.map((service) => (
                                             <div
                                                 key={service.title}
-                                                className="portfolio-service-card bg-[var(--brand-teal)] flex flex-col items-start justify-center mt-2 hover:-translate-y-1 transition-transform duration-300 ease-out">
+                                                className="portfolio-service-card bg-[var(--brand-teal)] flex flex-col items-start justify-start mt-2 hover:-translate-y-1 transition-transform duration-300 ease-out">
                                                 {/* ICON */}
                                                 <div className="portfolio-service-icon-wrap bg-white flex items-center justify-center">
                                                     <Image
@@ -104,7 +105,7 @@ export default function Services() {
                         </div>
 
                         {/* RIGHT PANEL - Services Visual Graphic Column */}
-                        <RightPanel
+                        <MediaSmallPanel
                             sections={servicesMediaSections}
                             arrowSize={48}
                         />

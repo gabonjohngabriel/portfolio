@@ -21,7 +21,7 @@ export interface ServiceItem {
 }
 
 export interface WorkItem {
-    number: string;
+    id: number;
     title: string;
     description: string;
     imageSrc: string;
@@ -82,19 +82,25 @@ export const services: ServiceItem[] = [
     {
         iconSrc: "/tabler_code.svg",
         title: "Web Development",
-        description: "Custom-coded, client-facing websites built from scratch",
+        description: "Custom-coded, client-facing websites built from scratch.",
+    },
+    {
+        iconSrc: "/iconoir_design-nib-solid.svg",
+        title: "Software Development",
+        description:
+            "Building scalable, efficient, and maintainable software solutions.",
     },
     {
         iconSrc: "/iconoir_design-nib-solid.svg",
         title: "UI/UX Design",
-        description: "Custom-coded, client-facing websites built from scratch",
+        description: "Creating visually stunning and user-friendly interfaces.",
     },
 ];
 
 // Services/Works Page
 export const works: WorkItem[] = [
     {
-        number: "01",
+        id: 1,
         title: "Flylet",
         description:
             "Flylet is a social note-sharing app where ideas meet locations. Pin notes to interactive maps, comment on discoveries, and connect with creators near you.",
@@ -102,7 +108,7 @@ export const works: WorkItem[] = [
         href: "https://flylet.app/",
     },
     {
-        number: "02",
+        id: 2,
         title: "Soon",
         description: "",
         imageSrc: "",

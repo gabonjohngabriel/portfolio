@@ -64,7 +64,7 @@ export default function Home() {
                                             />
                                         </span>
                                         <span className="ml-2 text-[#ff7d00]">
-                                            Innovation,
+                                            Innovation &
                                         </span>
                                     </span>
                                     <span className="relative z-20 block text-[#15616d]">
@@ -97,7 +97,7 @@ export default function Home() {
 
                                 {/* TECH STACKS */}
                                 <div className="portfolio-section-block">
-                                    <h2 className="portfolio-section-title mt-4 text-[#ff7d00]">
+                                    <h2 className="portfolio-section-title text-[#ff7d00]">
                                         Technical Skills
                                     </h2>
 
