@@ -12,7 +12,7 @@ import { services } from "../_lib";
 export default function Services() {
     const servicesMediaSections: MediaSmallPanelSection[] = [
         {
-            imageSrc: "/services_image.svg",
+            imageSrc: "",
             alt: "Services section graphic illustration",
             bgColor: "#15616d",
             number: "02",

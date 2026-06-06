@@ -17,7 +17,7 @@ export default function Works() {
 
     const worksMediaSections: MediaSmallPanelSection[] = [
         {
-            imageSrc: "/services_image.svg",
+            imageSrc: "",
             alt: "Services section graphic illustration",
             bgColor: "#15616d",
             number: "02",
