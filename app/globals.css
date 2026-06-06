@@ -110,7 +110,7 @@ body::-webkit-scrollbar {
 }
 
 .portfolio-page-nav {
-    font-size: clamp(18px, 1.55vmin, 22px);
+    font-size: clamp(14px, 1.55vmin, 18px);
 }
 
 /* Scroll Area for technical skills and descriptions */

@@ -32,7 +32,7 @@ export default function About() {
                             href="/about/orgs"
                             transitionTypes={["nav-forward"]}>
                             <div
-                                className="pointer-events-auto mr-6 cursor-pointer hover:scale-110 active:scale-95 transition-transform duration-300 flex items-center justify-center rounded-full shadow-lg"
+                                className="pointer-events-auto mr-10 cursor-pointer hover:scale-110 active:scale-95 transition-transform duration-300 flex items-center justify-center rounded-full shadow-lg"
                                 style={{
                                     width: "36px",
                                     height: "36px",
