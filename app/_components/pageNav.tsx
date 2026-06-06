@@ -93,7 +93,7 @@ export function PageNav({ activePage }: PageNavProps) {
 
             {/* MOBILE */}
             {isOpen && (
-                <div className="fixed inset-0 bg-white z-[99] flex flex-col justify-center items-center p-6 transition-all duration-300 ease-in-out">
+                <div className="absolute inset-0 bg-white z-[99] flex flex-col justify-center items-center p-6 transition-all duration-300 ease-in-out rounded-[24px]">
                     <div className="flex flex-col gap-6 text-center text-[24px]">
                         {navLinks.map((link) => (
                             <Link

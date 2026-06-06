@@ -585,14 +585,14 @@ body::-webkit-scrollbar {
 }
 
 ::view-transition-new(.page-card-back) {
-    animation: page-card-hold 2400ms linear both;
+    animation: page-card-hold 2800ms linear both;
     z-index: 1;
 }
 
 /* Page Card Enter Forward Animation */
 @keyframes page-card-enter-forward {
     from {
-        transform: translateX(100vw) translateY(-10vh) rotate(30deg) scale(0.95);
+        transform: translateX(150vw) translateY(-10vh) rotate(30deg) scale(0.95);
     }
 
     to {
@@ -607,7 +607,7 @@ body::-webkit-scrollbar {
     }
 
     to {
-        transform: translateX(100vw) translateY(-10vh) rotate(30deg) scale(0.95);
+        transform: translateX(150vw) translateY(-10vh) rotate(30deg) scale(0.95);
     }
 }
 
