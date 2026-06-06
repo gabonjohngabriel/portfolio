@@ -35,7 +35,7 @@ export default function Contact() {
                         {/* LEFT PANEL */}
                         <div className="portfolio-left-panel">
                             {/* NAV */}
-                            <PageNav backHref="/" activePage="contact" />
+                            <PageNav activePage="contact" />
 
                             {/* Scrollable Main Content */}
                             <div className="portfolio-main-copy portfolio-main-copy-contact portfolio-scroll-area">

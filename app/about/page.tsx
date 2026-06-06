@@ -57,7 +57,7 @@ export default function About() {
                         {/* LEFT PANEL */}
                         <div className="portfolio-left-panel">
                             {/* NAV */}
-                            <PageNav backHref="/" activePage="about" />
+                            <PageNav activePage="about" />
 
                             {/* Scrollable Main Content Container
                   This container is styled to handle text overflow gracefully on smaller heights. */}

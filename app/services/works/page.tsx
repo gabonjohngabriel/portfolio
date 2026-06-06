@@ -37,10 +37,7 @@ export default function Works() {
                         {/* LEFT PANEL */}
                         <div className="portfolio-left-panel">
                             {/* NAV */}
-                            <PageNav
-                                backHref={"/services"}
-                                activePage="works"
-                            />
+                            <PageNav activePage="works" />
 
                             {/* Scrollable Main Content */}
                             <div className="portfolio-main-copy portfolio-scroll-area">

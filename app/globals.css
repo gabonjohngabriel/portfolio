@@ -101,17 +101,16 @@ body::-webkit-scrollbar {
     display: flex;
     min-height: 0;
     height: 100%;
-    padding-top: clamp(38px, 2.5vmin, 52px);
-    padding-bottom: clamp(38px, 2.5vmin, 52px);
-    padding-left: clamp(38px, 2.5vmin, 52px);
-    padding-right: clamp(38px, 2.5vmin, 52px);
+    padding-top: clamp(48px, 2.5vmin, 52px);
+    padding-bottom: clamp(48px, 2.5vmin, 52px);
+    padding-left: clamp(52px, 2.5vmin, 64px);
+    padding-right: clamp(24px, 2.5vmin, 36px);
     flex-direction: column;
     justify-content: space-between;
 }
 
 .portfolio-page-nav {
-    flex-shrink: 0;
-    font-size: clamp(18px, 1.55vmin, 20px);
+    font-size: clamp(18px, 1.55vmin, 22px);
 }
 
 /* Scroll Area for technical skills and descriptions */
@@ -635,40 +634,5 @@ body::-webkit-scrollbar {
     ::view-transition-new(.page-card-back) {
         animation-duration: 1ms !important;
         animation-delay: 0ms !important;
-    }
-}
-
-/* Portrait orientation lock for mobile/tablet */
-@media (orientation: portrait) and (max-width: 1024px) {
-    body::before {
-        content: "";
-        position: fixed;
-        inset: 0;
-        background: black;
-        z-index: 99999;
-    }
-
-    body::after {
-        content: "To view the portfolio, please rotate your device to landscape mode.";
-        white-space: pre-wrap;
-        position: fixed;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        color: #ffffff;
-        font-family: var(--font-sans);
-        font-size: clamp(18px, 4vw, 24px);
-        font-weight: 400;
-        text-align: center;
-        width: 75%;
-        max-width: 400px;
-        z-index: 100000;
-        line-height: 1.25;
-        letter-spacing: -0.025em;
-        text-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
-    }
-
-    .portfolio-viewport {
-        display: none !important;
     }
 }

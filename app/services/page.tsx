@@ -30,7 +30,7 @@ export default function Services() {
                         {/* LEFT PANEL */}
                         <div className="portfolio-left-panel">
                             {/* NAV */}
-                            <PageNav backHref="/" activePage="services" />
+                            <PageNav activePage="services" />
 
                             {/* Scrollable Main Content */}
                             <div className="portfolio-main-copy portfolio-scroll-area">

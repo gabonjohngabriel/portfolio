@@ -29,7 +29,7 @@ export default function Orgs() {
                         {/* LEFT PANEL */}
                         <div className="portfolio-left-panel">
                             {/* HEADER */}
-                            <PageNav backHref="/about" activePage="about" />
+                            <PageNav activePage="about" />
 
                             {/* MAIN CONTENT */}
                             <div className="portfolio-main-copy portfolio-scroll-area">
