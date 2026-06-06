@@ -38,14 +38,14 @@ export default function Home() {
                 <div className="portfolio-card-shell">
                     <div className="portfolio-card-grid">
                         {/* LEFT PANEL */}
-                        <div className="portfolio-left-panel">
+                        <div className="portfolio-left-panel order-1">
                             {/* NAV */}
                             <PageNav activePage="home" />
 
                             {/* MAIN */}
                             <div className="portfolio-main-copy portfolio-main-copy-home portfolio-scroll-area">
                                 {/* TITLE */}
-                                <p className="uppercase text-[12px] mb-1.5">
+                                <p className="uppercase text-[12px] mb-1.5 mt-8 lg:mt-0">
                                     SOARBYTE
                                 </p>
                                 <h1 className="portfolio-hero-title text-[#001524]">
@@ -85,13 +85,13 @@ export default function Home() {
                                 {/* ACTION BUTTONS */}
                                 <div className="portfolio-actions flex flex-wrap gap-4 mt-2">
                                     <Link
-                                        className="portfolio-btn flex items-center justify-center rounded-full bg-[#ff7d00] px-8 py-3 text-[14px] font-semibold uppercase tracking-[0.6px] text-white transition-all hover:scale-105 hover:-translate-y-0.5 active:scale-95"
+                                        className="portfolio-btn items-center justify-center rounded-full bg-[#ff7d00] font-semibold uppercase tracking-[0.6px] text-white transition-all hover:scale-105 hover:-translate-y-0.5 active:scale-95"
                                         href="/contact"
                                         transitionTypes={["nav-forward"]}>
                                         Get In Touch
                                     </Link>
                                     <Link
-                                        className="portfolio-btn flex items-center justify-center rounded-full bg-[#001524] px-8 py-3 text-[14px] font-semibold uppercase tracking-[0.6px] text-white transition-all hover:scale-105 hover:-translate-y-0.5 active:scale-95"
+                                        className="portfolio-btn items-center justify-center rounded-full bg-[#001524] font-semibold uppercase tracking-[0.6px] text-white transition-all hover:scale-105 hover:-translate-y-0.5 active:scale-95"
                                         href="/services/works"
                                         transitionTypes={["nav-forward"]}>
                                         View Works
@@ -130,7 +130,10 @@ export default function Home() {
                         </div>
 
                         {/* RIGHT PANEL - Double image media column */}
-                        <MediaPanel sections={homeMediaSections} />
+                        <MediaPanel
+                            className="order-2"
+                            sections={homeMediaSections}
+                        />
                     </div>
                 </div>
             </PageCard>

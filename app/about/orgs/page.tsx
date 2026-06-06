@@ -5,6 +5,7 @@ import {
     MediaPanel,
     type MediaSection,
 } from "../../_components";
+import Link from "next/link";
 import { organizations, experiences, socials } from "../../_lib";
 
 /* Organizations & Involvement Page */
@@ -112,7 +113,7 @@ export default function Orgs() {
                                                 href={social.href}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="portfolio-stack-item mt-2 flex flex-col items-center group cursor-pointer">
+                                                className="portfolio-stack-item mt-4 flex flex-col items-center group cursor-pointer">
                                                 {/* ICON */}
                                                 <div className="relative transition-transform duration-300 ease-out group-hover:scale-110">
                                                     <Image
@@ -131,12 +132,23 @@ export default function Orgs() {
                                             </a>
                                         ))}
                                     </div>
+
+                                    {/* MOBILE ONLY */}
+                                    <div className="lg:hidden mt-2 pt-4 border-t border-[#001524]/10 text-right">
+                                        <Link
+                                            href="/about"
+                                            transitionTypes={["nav-forward"]}
+                                            className="inline-flex items-center gap-2 text-[var(--brand-orange)] font-semibold uppercase tracking-[0.05em] text-[12px] hover:translate-x-1 transition-transform">
+                                            &larr; Previous
+                                        </Link>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         {/* RIGHT PANEL */}
                         <MediaPanel
+                            className="portfolio-media-stack-hide"
                             sections={orgsMediaSections}
                             arrowSize={48}
                         />

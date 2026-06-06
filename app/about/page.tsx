@@ -55,7 +55,7 @@ export default function About() {
 
                     <div className="portfolio-card-grid">
                         {/* LEFT PANEL */}
-                        <div className="portfolio-left-panel">
+                        <div className="portfolio-left-panel order-2 lg:order-1">
                             {/* NAV */}
                             <PageNav activePage="about" />
 
@@ -63,7 +63,7 @@ export default function About() {
                   This container is styled to handle text overflow gracefully on smaller heights. */}
                             <div className="portfolio-main-copy portfolio-scroll-area">
                                 {/* HEADINGS */}
-                                <h1 className="portfolio-about-title text-[#001524]">
+                                <h1 className="portfolio-about-title lg:mt-4 mt-8 text-[#001524]">
                                     <span className="block text-[var(--brand-orange)]">
                                         John Gabriel
                                     </span>
@@ -83,7 +83,7 @@ export default function About() {
                                 </p>
 
                                 {/* BUTTONS */}
-                                <div className="portfolio-actions flex flex-wrap gap-4">
+                                <div className="portfolio-actions flex flex-wrap gap-4 mt-2">
                                     <a
                                         className="portfolio-btn flex items-center justify-center rounded-full bg-[#ff7d00] px-8 py-3 text-[14px] font-semibold uppercase tracking-[0.6px] text-white transition-all hover:scale-105 hover:-translate-y-0.5 active:scale-95 shadow-sm"
                                         href="/misc/Resume.pdf"
@@ -126,19 +126,20 @@ export default function About() {
                                 </div>
 
                                 {/* MOBILE ONLY */}
-                                <div className="lg:hidden mt-8 pt-4 border-t border-[#001524]/10 text-right">
+                                <div className="lg:hidden mt-2 pt-4 border-t border-[#001524]/10 text-right pb-8">
                                     <Link
                                         href="/about/orgs"
                                         transitionTypes={["nav-forward"]}
-                                        className="inline-flex items-center gap-2 text-[var(--brand-orange)] font-semibold uppercase tracking-[0.05em] text-[14px] hover:translate-x-1 transition-transform">
-                                        Organizations & Involvement &rarr;
+                                        className="inline-flex items-center gap-2 text-[var(--brand-orange)] font-semibold uppercase tracking-[0.05em] text-[12px] hover:translate-x-1 transition-transform">
+                                        Experiences, Orgs, & Socials &rarr;
                                     </Link>
                                 </div>
                             </div>
                         </div>
 
-                        {/* RIGHT PANEL - Unified Visual Graphic Column */}
+                        {/* RIGHT PANEL */}
                         <MediaPanel
+                            className="portfolio-media-stack-hide order-1 lg:order-2 min-h-[300px] lg:min-h-0 mb-8 lg:mb-0 rounded-t-[24px] lg:rounded-none overflow-hidden shrink-0"
                             sections={aboutMediaSections}
                             arrowSize={48}
                         />

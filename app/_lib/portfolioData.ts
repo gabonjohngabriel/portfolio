@@ -136,11 +136,11 @@ export const socials: SocialItem[] = [
     {
         label: "GitHub",
         src: "/mdi_github.svg",
-        href: "https://github.com/lxaplace",
+        href: "https://github.com/gabonjohngabriel",
     },
     {
         label: "Facebook",
         src: "/ic_outline-facebook.svg",
-        href: "https://www.facebook.com/gabonjohngabriel",
+        href: "https://www.facebook.com/gab0114",
     },
 ];
