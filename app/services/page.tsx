@@ -25,17 +25,17 @@ export default function Services() {
     return (
         <div className="portfolio-viewport select-none">
             <PageCard>
-                <div className="portfolio-card-shell">
+                <div className="portfolio-card-shell relative">
                     <div className="portfolio-card-grid__no-text">
                         {/* LEFT PANEL */}
-                        <div className="portfolio-left-panel">
+                        <div className="portfolio-left-panel order-2 lg:order-1">
                             {/* NAV */}
                             <PageNav activePage="services" />
 
                             {/* Scrollable Main Content */}
                             <div className="portfolio-main-copy portfolio-scroll-area">
                                 {/* TITLE */}
-                                <h1 className="portfolio-services-title text-[var(--brand-teal)]">
+                                <h1 className="portfolio-services-title lg:mt-8 mt-10 text-[var(--brand-teal)]">
                                     <span className="block">
                                         Crafting Quality Standards
                                     </span>
@@ -104,8 +104,9 @@ export default function Services() {
                             </div>
                         </div>
 
-                        {/* RIGHT PANEL - Services Visual Graphic Column */}
+                        {/* RIGHT PANEL */}
                         <MediaSmallPanel
+                            className="portfolio-media-stack-hide order-1 lg:order-2 min-h-[300px] lg:min-h-0 mb-8 lg:mb-0 rounded-t-[24px] lg:rounded-none overflow-hidden shrink-0"
                             sections={servicesMediaSections}
                             arrowSize={48}
                         />

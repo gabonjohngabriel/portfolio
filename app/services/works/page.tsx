@@ -35,14 +35,14 @@ export default function Works() {
                 <div className="portfolio-card-shell">
                     <div className="portfolio-card-grid__no-text">
                         {/* LEFT PANEL */}
-                        <div className="portfolio-left-panel">
+                        <div className="portfolio-left-panel order-2 lg:order-1">
                             {/* NAV */}
                             <PageNav activePage="works" />
 
                             {/* Scrollable Main Content */}
                             <div className="portfolio-main-copy portfolio-scroll-area">
                                 {/* TITLE */}
-                                <h1 className="portfolio-services-title mb-6 text-[var(--brand-teal)]">
+                                <h1 className="portfolio-services-title lg:mt-8 mt-10 mb-6 text-[var(--brand-teal)]">
                                     <span className="block">Projects</span>
                                 </h1>
 
@@ -125,6 +125,7 @@ export default function Works() {
 
                         {/* RIGHT PANEL - Services Visual Graphic Column */}
                         <MediaSmallPanel
+                            className="portfolio-media-stack-hide order-1 lg:order-2 min-h-[300px] lg:min-h-0 mb-8 lg:mb-0 rounded-t-[24px] lg:rounded-none overflow-hidden shrink-0"
                             sections={worksMediaSections}
                             arrowSize={48}
                         />

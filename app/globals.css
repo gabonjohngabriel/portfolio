@@ -461,11 +461,6 @@ body::-webkit-scrollbar {
     .portfolio-card-shell {
         width: 85%;
     }
-
-    .portfolio-scroll-area {
-        overflow-y: auto;
-        justify-content: flex-start;
-    }
 }
 
 @media (max-width: 1024px) {
@@ -683,7 +678,8 @@ body::-webkit-scrollbar {
         display: none;
     }
 
-    .portfolio-card-grid {
+    .portfolio-card-grid,
+    .portfolio-card-grid__no-text {
         display: flex;
         flex-direction: column;
         gap: 0;
@@ -697,7 +693,7 @@ body::-webkit-scrollbar {
         height: auto;
         min-height: 0;
         padding: 24px;
-        justify-content: flex-start;
+        flex-direction: column;
     }
 
     .portfolio-page-nav {
@@ -725,7 +721,7 @@ body::-webkit-scrollbar {
         height: auto;
         min-height: auto;
         overflow: visible;
-        justify-content: flex-start;
+        justify-content: flex-end;
         display: flex;
         flex-direction: column;
     }

@@ -33,14 +33,14 @@ export default function Contact() {
                 <div className="portfolio-card-shell">
                     <div className="portfolio-card-grid__no-text">
                         {/* LEFT PANEL */}
-                        <div className="portfolio-left-panel">
+                        <div className="portfolio-left-panel order-2 lg:order-1">
                             {/* NAV */}
                             <PageNav activePage="contact" />
 
                             {/* Scrollable Main Content */}
                             <div className="portfolio-main-copy portfolio-main-copy-contact portfolio-scroll-area">
                                 {/* TITLE */}
-                                <div className="flex items-center gap-4 sm:gap-6">
+                                <div className="flex items-center gap-4 sm:gap-6 lg:mt-8 mt-10">
                                     <Image
                                         src="/mynaui_send.svg"
                                         alt="Send icon"
@@ -127,6 +127,7 @@ export default function Contact() {
                         </div>
                         {/* RIGHT PANEL - Services Visual Graphic Column */}
                         <MediaSmallPanel
+                            className="portfolio-media-stack-hide order-1 lg:order-2 min-h-[300px] lg:min-h-0 mb-8 lg:mb-0 rounded-t-[24px] lg:rounded-none overflow-hidden shrink-0"
                             sections={contactMediaSections}
                             arrowSize={48}
                         />

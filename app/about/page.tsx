@@ -63,7 +63,7 @@ export default function About() {
                   This container is styled to handle text overflow gracefully on smaller heights. */}
                             <div className="portfolio-main-copy portfolio-scroll-area">
                                 {/* HEADINGS */}
-                                <h1 className="portfolio-about-title lg:mt-4 mt-8 text-[#001524]">
+                                <h1 className="portfolio-about-title lg:mt-8 mt-10 text-[#001524]">
                                     <span className="block text-[var(--brand-orange)]">
                                         John Gabriel
                                     </span>
