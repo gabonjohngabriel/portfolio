@@ -85,14 +85,14 @@ export default function About() {
                                 {/* BUTTONS */}
                                 <div className="portfolio-actions flex flex-wrap gap-4 mt-2">
                                     <a
-                                        className="portfolio-btn flex items-center justify-center rounded-full bg-[#ff7d00] px-8 py-3 text-[14px] font-semibold uppercase tracking-[0.6px] text-white transition-all hover:scale-105 hover:-translate-y-0.5 active:scale-95 shadow-sm"
+                                        className="portfolio-btn flex items-center justify-center rounded-full bg-[#ff7d00] px-8 py-3 text-[14px] font-semibold uppercase tracking-[0.6px] text-white transition-all hover:scale-105 hover:-translate-y-0.5 active:scale-95 "
                                         href="/misc/Resume.pdf"
                                         target="_blank"
                                         rel="noopener noreferrer">
                                         Download CV
                                     </a>
                                     <a
-                                        className="portfolio-btn flex items-center justify-center rounded-full bg-[#001524] px-8 py-3 text-[14px] font-semibold uppercase tracking-[0.6px] text-white transition-all hover:scale-105 hover:-translate-y-0.5 active:scale-95 shadow-sm"
+                                        className="portfolio-btn flex items-center justify-center rounded-full bg-[#001524] px-8 py-3 text-[14px] font-semibold uppercase tracking-[0.6px] text-white transition-all hover:scale-105 hover:-translate-y-0.5 active:scale-95 "
                                         href="https://www.linkedin.com/in/gabrielgabon/"
                                         target="_blank"
                                         rel="noopener noreferrer">
