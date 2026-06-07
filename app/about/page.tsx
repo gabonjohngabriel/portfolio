@@ -96,15 +96,16 @@ export default function About() {
                                         items={tools}
                                     />
                                 </div>
-                                {/* NEXT BUTTON */}
-                                <div className="mt-4 pt-3 border-t border-[#001524]/10 text-right">
-                                    <Link
-                                        href="/about/orgs"
-                                        transitionTypes={["nav-forward"]}
-                                        className="inline-flex items-center gap-2 text-[var(--brand-orange)] font-semibold uppercase tracking-[0.05em] text-[12px] hover:translate-x-1 transition-transform">
-                                        Experiences, Orgs, & Socials &rarr;
-                                    </Link>
-                                </div>
+                            </div>
+
+                            {/* NEXT BUTTON */}
+                            <div className="mt-4 text-right">
+                                <Link
+                                    href="/about/orgs"
+                                    transitionTypes={["nav-forward"]}
+                                    className="inline-flex items-center gap-2 text-[var(--brand-orange)] font-semibold uppercase tracking-[0.05em] text-[12px] hover:translate-x-1 transition-transform">
+                                    Experiences, Orgs, & Socials &rarr;
+                                </Link>
                             </div>
                         </div>
 

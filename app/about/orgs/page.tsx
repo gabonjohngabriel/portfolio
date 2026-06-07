@@ -113,7 +113,7 @@ export default function Orgs() {
                                                 href={social.href}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="portfolio-stack-item mt-4 flex flex-col items-center group cursor-pointer">
+                                                className="portfolio-stack-item mt-2 flex flex-col items-center group cursor-pointer">
                                                 {/* ICON */}
                                                 <div className="relative transition-transform duration-300 ease-out group-hover:scale-110">
                                                     <Image
@@ -134,7 +134,7 @@ export default function Orgs() {
                                     </div>
                                 </div>
                                 {/* BACK BUTTON */}
-                                <div className="mt-4 pt-3 border-t border-[#001524]/10 text-left">
+                                <div className="mt-4 text-left">
                                     <Link
                                         href="/about"
                                         transitionTypes={["nav-forward"]}
