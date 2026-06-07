@@ -26,41 +26,13 @@ export default function About() {
         <div className="portfolio-viewport select-none">
             <PageCard>
                 <div className="portfolio-card-shell relative">
-                    {/* FLOATING NEXT PAGE ARROW */}
-                    <div className="hidden lg:flex absolute right-[47.5%] top-1/2 -translate-y-1/2 z-40 items-center justify-end pointer-events-none">
-                        <Link
-                            href="/about/orgs"
-                            transitionTypes={["nav-forward"]}>
-                            <div
-                                className="pointer-events-auto mr-10 cursor-pointer hover:scale-110 active:scale-95 transition-transform duration-300 flex items-center justify-center rounded-full shadow-lg"
-                                style={{
-                                    width: "36px",
-                                    height: "36px",
-                                    backgroundColor: "var(--brand-orange)",
-                                    maskImage:
-                                        "url('/icon-park-solid_right-c.svg')",
-                                    WebkitMaskImage:
-                                        "url('/icon-park-solid_right-c.svg')",
-                                    maskSize: "contain",
-                                    WebkitMaskSize: "contain",
-                                    maskRepeat: "no-repeat",
-                                    WebkitMaskRepeat: "no-repeat",
-                                    maskPosition: "center",
-                                    WebkitMaskPosition: "center",
-                                }}
-                                aria-label="View Organizations and Involvement"
-                            />
-                        </Link>
-                    </div>
-
                     <div className="portfolio-card-grid">
                         {/* LEFT PANEL */}
                         <div className="portfolio-left-panel order-2 lg:order-1">
                             {/* NAV */}
                             <PageNav activePage="about" />
 
-                            {/* Scrollable Main Content Container
-                  This container is styled to handle text overflow gracefully on smaller heights. */}
+                            {/* MAIN */}
                             <div className="portfolio-main-copy portfolio-scroll-area">
                                 {/* HEADINGS */}
                                 <h1 className="portfolio-about-title lg:mt-8 mt-10 text-[#001524]">
@@ -73,7 +45,7 @@ export default function About() {
                                 </h1>
 
                                 {/* DETAILS */}
-                                <p className="portfolio-copy max-w-xl text-[#001524] mt-4 text-[14px]">
+                                <p className="portfolio-copy max-w-xl text-[#001524]">
                                     2nd Year BSIT Student
                                     <br />
                                     <span className="text-[12px] text-[#001524] italic">
@@ -83,7 +55,7 @@ export default function About() {
                                 </p>
 
                                 {/* BUTTONS */}
-                                <div className="portfolio-actions flex flex-wrap gap-4 mt-2">
+                                <div className="portfolio-actions flex flex-wrap">
                                     <a
                                         className="portfolio-btn flex items-center justify-center rounded-full bg-[#ff7d00] px-8 py-3 text-[14px] font-semibold uppercase tracking-[0.6px] text-white transition-all hover:scale-105 hover:-translate-y-0.5 active:scale-95 "
                                         href="/misc/Resume.pdf"
@@ -124,9 +96,8 @@ export default function About() {
                                         items={tools}
                                     />
                                 </div>
-
-                                {/* MOBILE ONLY */}
-                                <div className="lg:hidden mt-2 pt-4 border-t border-[#001524]/10 text-right pb-8">
+                                {/* NEXT BUTTON */}
+                                <div className="mt-4 pt-3 border-t border-[#001524]/10 text-right">
                                     <Link
                                         href="/about/orgs"
                                         transitionTypes={["nav-forward"]}

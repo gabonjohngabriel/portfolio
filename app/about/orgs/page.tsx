@@ -132,16 +132,15 @@ export default function Orgs() {
                                             </a>
                                         ))}
                                     </div>
-
-                                    {/* MOBILE ONLY */}
-                                    <div className="lg:hidden mt-2 pt-4 border-t border-[#001524]/10 text-right">
-                                        <Link
-                                            href="/about"
-                                            transitionTypes={["nav-forward"]}
-                                            className="inline-flex items-center gap-2 text-[var(--brand-orange)] font-semibold uppercase tracking-[0.05em] text-[12px] hover:translate-x-1 transition-transform">
-                                            &larr; Previous
-                                        </Link>
-                                    </div>
+                                </div>
+                                {/* BACK BUTTON */}
+                                <div className="mt-4 pt-3 border-t border-[#001524]/10 text-left">
+                                    <Link
+                                        href="/about"
+                                        transitionTypes={["nav-forward"]}
+                                        className="inline-flex items-center gap-2 text-[var(--brand-orange)] font-semibold uppercase tracking-[0.05em] text-[12px] hover:translate-x-1 transition-transform">
+                                        &larr; Previous
+                                    </Link>
                                 </div>
                             </div>
                         </div>
