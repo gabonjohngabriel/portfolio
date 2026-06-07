@@ -49,22 +49,6 @@ export default function Services() {
                                     experiences.
                                 </p>
 
-                                {/* BUTTONS */}
-                                <div className="portfolio-actions flex flex-wrap gap-4">
-                                    <Link
-                                        className="portfolio-btn flex items-center px-8 py-3 justify-center rounded-full bg-[var(--brand-teal)] font-semibold uppercase tracking-[0.08em] text-[white] transition-all hover:scale-105 hover:-translate-y-0.5 active:scale-95"
-                                        href="/contact"
-                                        transitionTypes={["nav-forward"]}>
-                                        Get In Touch
-                                    </Link>
-                                    <Link
-                                        className="portfolio-btn flex items-center px-8 py-3 justify-center rounded-full bg-[#001524] font-semibold uppercase tracking-[0.08em] text-white transition-all hover:scale-105 hover:-translate-y-0.5 active:scale-95"
-                                        href="/services/works"
-                                        transitionTypes={["nav-forward"]}>
-                                        View Works
-                                    </Link>
-                                </div>
-
                                 {/* SERVICES & SOLUTIONS SECTION */}
                                 <div className="portfolio-services-section">
                                     <h2 className="portfolio-services-section-title text-[var(--brand-teal)] mt-2">
@@ -100,6 +84,21 @@ export default function Services() {
                                             </div>
                                         ))}
                                     </div>
+                                </div>
+                                {/* BUTTONS */}
+                                <div className="mt-4 pt-4 flex justify-between">
+                                    <Link
+                                        href="/about/orgs"
+                                        transitionTypes={["nav-back"]}
+                                        className="inline-flex items-center gap-2 text-[var(--brand-teal)] font-semibold uppercase tracking-[0.05em] text-[12px] hover:translate-x-1 transition-transform">
+                                        &larr; About
+                                    </Link>
+                                    <Link
+                                        href="/services/works"
+                                        transitionTypes={["nav-forward"]}
+                                        className="inline-flex items-center gap-2 text-[var(--brand-teal)] font-semibold uppercase tracking-[0.05em] text-[12px] hover:translate-x-1 transition-transform">
+                                        Works &rarr;
+                                    </Link>
                                 </div>
                             </div>
                         </div>

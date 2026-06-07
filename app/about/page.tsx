@@ -99,7 +99,7 @@ export default function About() {
                             </div>
 
                             {/* NEXT BUTTON */}
-                            <div className="mt-4 text-right">
+                            <div className="mt-4 pt-4 flex justify-between">
                                 <Link
                                     href="/about/orgs"
                                     transitionTypes={["nav-forward"]}

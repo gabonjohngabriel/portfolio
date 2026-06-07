@@ -120,6 +120,21 @@ export default function Works() {
                                         )}
                                     </div>
                                 </div>
+                                {/* BUTTONS */}
+                                <div className="mt-4 pt-4 flex justify-between">
+                                    <Link
+                                        href="/services"
+                                        transitionTypes={["nav-back"]}
+                                        className="inline-flex items-center gap-2 text-[var(--brand-teal)] font-semibold uppercase tracking-[0.05em] text-[12px] hover:translate-x-1 transition-transform">
+                                        &larr; SERVICES
+                                    </Link>
+                                    <Link
+                                        href="/contact"
+                                        transitionTypes={["nav-forward"]}
+                                        className="inline-flex items-center gap-2 text-[var(--brand-teal)] font-semibold uppercase tracking-[0.05em] text-[12px] hover:translate-x-1 transition-transform">
+                                        CONTACT &rarr;
+                                    </Link>
+                                </div>
                             </div>
                         </div>
 

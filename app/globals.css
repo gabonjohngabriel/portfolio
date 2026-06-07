@@ -260,25 +260,22 @@ body::-webkit-scrollbar {
 
 /* SERVICES */
 .portfolio-services-title {
-    font-size: clamp(36px, min(5.2vw, 7.8vh), 52px);
+    font-size: clamp(36px, 48px, 52px);
     line-height: 0.92;
-    letter-spacing: -0.03em;
-    font-family: var(--font-display);
+    letter-spacing: -0.025em;
 }
 
 .portfolio-services-copy {
-    font-size: clamp(11px, min(1.2vw, 1.8vh), 14px);
+    margin-top: 12px;
+    font-size: clamp(12px, 13px, 14px);
     line-height: 1.25;
 }
 
-.portfolio-services-section {
-    margin-top: clamp(10px, 1.4vmin, 16px);
-}
-
 .portfolio-services-section-title {
-    font-size: clamp(22px, min(3.2vw, 4.8vh), 36px);
+    margin-top: 12px;
+    font-size: clamp(32px, 38px, 42px);
     line-height: 0.95;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
 }
 
 .portfolio-service-grid {
