@@ -23,6 +23,8 @@ const montserrat = Montserrat({
     weight: ["400", "500", "600", "700", "800"],
 });
 
+import { ScrollAndSwipeNav } from "./_components";
+
 // Metadata
 export const metadata: Metadata = {
     title: "@lxaplace | Digital Solutions Through Innovation, Creativity, and AI",
@@ -39,6 +41,7 @@ export default function RootLayout({
             lang="en"
             className={`${calSans.variable} ${montserrat.variable} ${amoria.variable} h-full overflow-hidden antialiased`}>
             <body className="flex h-dvh min-h-dvh flex-col overflow-hidden">
+                <ScrollAndSwipeNav />
                 {children}
             </body>
         </html>

@@ -20,19 +20,7 @@
     --font-amoria: var(--font-amoria), serif;
 }
 
-/* STYLES */
-body {
-    background: var(--background);
-    color: var(--foreground);
-    font-family: var(--font-sans);
-
-    h1,
-    h2,
-    .font-display {
-        font-family: var(--font-display);
-    }
-}
-
+/* BASE GLOBAL ELEMENTS */
 html,
 body {
     height: 100%;
@@ -41,6 +29,15 @@ body {
     overscroll-behavior: none;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+}
+
+body h1,
+body h2,
+body .font-display {
+    font-family: var(--font-display);
 }
 
 html::-webkit-scrollbar,
@@ -48,12 +45,12 @@ body::-webkit-scrollbar {
     display: none;
 }
 
-/* AMORIA */
+/* TYPOGRAPHY */
 .font-amoria {
     letter-spacing: 0.025em;
 }
 
-/* VIEWPORT */
+/* LAYOUT & STRUCTURE (SHELL) */
 .portfolio-viewport {
     display: flex;
     height: 100dvh;
@@ -65,7 +62,6 @@ body::-webkit-scrollbar {
     padding: clamp(8px, 3vmin, 40px);
 }
 
-/* SHELL */
 .portfolio-card-shell {
     width: min(1289px, 67.5%);
     height: min(874px, calc(100dvh - clamp(16px, 6vmin, 80px)));
@@ -108,17 +104,17 @@ body::-webkit-scrollbar {
     justify-content: space-between;
 }
 
+/* NAVIGATION */
 .portfolio-page-nav {
     font-size: clamp(14px, 1.55vmin, 18px);
 }
 
-/* SCROLL AREA */
+/* MAIN CONTENT BLOCKS */
 .portfolio-scroll-area {
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
 
-/* MAIN CONTAINER */
 .portfolio-main-copy {
     display: flex;
     min-height: 0;
@@ -147,21 +143,18 @@ body::-webkit-scrollbar {
     height: auto;
 }
 
-/* COPY */
 .portfolio-copy {
     margin-top: clamp(8px, 10px, 12px);
     font-size: clamp(13px, 14px, 15px);
     line-height: 1;
 }
 
-/* ABOUT TITLE */
 .portfolio-about-title {
     font-size: clamp(28px, 30px, 32px);
     line-height: 0.95;
     letter-spacing: -0.025em;
 }
 
-/* SUBTITLE */
 .portfolio-section-block {
     margin-top: clamp(8px, 10px, 12px);
 }
@@ -171,7 +164,7 @@ body::-webkit-scrollbar {
     letter-spacing: -0.01em;
 }
 
-/* GRID */
+/* SKILLS STACK & GRIDS */
 .portfolio-stack-grid {
     gap: clamp(2px, 0.75vmin, 4px);
 }
@@ -190,15 +183,10 @@ body::-webkit-scrollbar {
     font-size: clamp(11px, 1.15vmin, 13px);
 }
 
-/* BUTTONS */
+/* BUTTONS & LINKS */
 .portfolio-actions {
     gap: clamp(6px, 8px, 12px);
     flex-shrink: 0;
-}
-
-.portfolio-actions Link {
-    padding: clamp(8px, 1.25vmin, 12px) clamp(16px, 2.5vmin, 32px);
-    font-size: clamp(10px, 1.2vmin, 14px);
 }
 
 .portfolio-btn {
@@ -220,6 +208,11 @@ body::-webkit-scrollbar {
     transform: scale(1.05);
 }
 
+.link-btn {
+    font-size: 14px;
+}
+
+/* MEDIA PANELS & SIDEBARS */
 .portfolio-media-stack {
     display: grid;
     min-height: 0;
@@ -258,7 +251,7 @@ body::-webkit-scrollbar {
     margin-bottom: clamp(4px, 0.8vmin, 8px);
 }
 
-/* SERVICES */
+/* SERVICES PAGE */
 .portfolio-services-title {
     font-size: clamp(36px, 48px, 52px);
     line-height: 0.92;
@@ -313,17 +306,15 @@ body::-webkit-scrollbar {
     font-size: clamp(11px, 1.1vmin, 12px);
 }
 
-/* Services/Works Page - Works layout grid */
+/* SERVICES/WORKS PAGE */
 .portfolio-works-layout {
     display: grid;
-    grid-template-columns: clamp(80px, 10vw, 120px) 1fr;
-    gap: clamp(24px, 4vmin, 48px);
+    gap: clamp(24px, 1vmin, 32px);
     align-items: center;
-    margin-top: clamp(14px, 2vmin, 20px);
+    margin-top: clamp(24px, 1vmin, 32px);
     height: auto;
 }
 
-/* Services/Works Page - Project Showcase */
 .portfolio-work-showcase {
     position: relative;
     display: flex;
@@ -380,53 +371,7 @@ body::-webkit-scrollbar {
     background: #ffffff;
 }
 
-/* WORK LIST */
-.portfolio-work-list {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(8px, 1.2vmin, 16px);
-    justify-content: center;
-}
-
-.portfolio-work-list-item {
-    display: flex;
-    align-items: center;
-    gap: clamp(8px, 1.2vmin, 12px);
-    font-family: var(--font-sans), sans-serif;
-    font-size: clamp(9px, 1.45vmin, 12px);
-    color: #8da9c4;
-    transition: all 0.3s ease;
-}
-
-.portfolio-work-list-item.is-active {
-    color: var(--brand-teal);
-}
-
-.portfolio-work-list-item.is-active .portfolio-work-list-title {
-    font-style: italic;
-    font-weight: 600;
-    letter-spacing: -0.05em;
-}
-
-.portfolio-work-list-item:hover:not(.cursor-not-allowed) {
-    transform: translateX(4px);
-    color: var(--brand-teal);
-}
-
-.portfolio-work-list-num {
-    font-weight: 500;
-    min-width: clamp(12px, 1.5vmin, 18px);
-}
-
-.portfolio-work-list-dash {
-    opacity: 0.5;
-}
-
-.portfolio-work-list-title {
-    font-weight: 500;
-}
-
-/* About Page - Organizations & Involvement */
+/* ABOUT PAGE - EXPERIENCES / ORGS */
 .portfolio-org-grid {
     margin-top: clamp(12px, 1.2vmin, 16px);
     gap: clamp(8px, 1.6vmin, 16px);
@@ -455,6 +400,75 @@ body::-webkit-scrollbar {
     font-size: clamp(12px, 1.1vmin, 14px);
 }
 
+/* VIEW TRANSITIONS */
+::view-transition-group(.page-card-forward),
+::view-transition-group(.page-card-back) {
+    animation-duration: 200ms;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    overflow: visible;
+}
+
+::view-transition-old(.page-card-forward) {
+    animation: page-card-hold 1600ms linear both;
+    z-index: 1;
+}
+
+::view-transition-new(.page-card-forward) {
+    animation: page-card-enter-forward 1600ms cubic-bezier(0.22, 1, 0.36, 1)
+        both;
+    transform-origin: 50% 50%;
+    z-index: 2;
+}
+
+::view-transition-old(.page-card-back) {
+    animation: page-card-exit-back 2400ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    transform-origin: 50% 50%;
+    z-index: 2;
+}
+
+::view-transition-new(.page-card-back) {
+    animation: page-card-hold 2800ms linear both;
+    z-index: 1;
+}
+
+@keyframes page-card-enter-forward {
+    from {
+        transform: translateX(150vw) translateY(-10vh) rotate(30deg) scale(0.95);
+    }
+    to {
+        transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+    }
+}
+
+@keyframes page-card-exit-back {
+    from {
+        transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+    }
+    to {
+        transform: translateX(150vw) translateY(-10vh) rotate(30deg) scale(0.95);
+    }
+}
+
+@keyframes page-card-hold {
+    from,
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-group(.page-card-forward),
+    ::view-transition-group(.page-card-back),
+    ::view-transition-old(.page-card-forward),
+    ::view-transition-new(.page-card-forward),
+    ::view-transition-old(.page-card-back),
+    ::view-transition-new(.page-card-back) {
+        animation-duration: 1ms !important;
+        animation-delay: 0ms !important;
+    }
+}
+
 /* RESPONSIVE DESIGN BREAKPOINTS */
 @media (max-width: 1200px) {
     .portfolio-card-shell {
@@ -477,22 +491,12 @@ body::-webkit-scrollbar {
         padding: 20px;
     }
 
-    /* Works Layout Stack for mobile/tablet */
     .portfolio-works-layout {
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr;
         gap: 16px;
         align-items: start;
         margin-top: 12px;
-    }
-
-    .portfolio-work-list {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: clamp(12px, 2vmin, 20px);
-        justify-content: flex-start;
-        border-bottom: 1px solid rgba(0, 21, 36, 0.1);
-        padding-bottom: 10px;
     }
 
     .portfolio-work-showcase-card {
@@ -506,7 +510,6 @@ body::-webkit-scrollbar {
         padding: 12px;
     }
 
-    /* Service Cards Grid vertical stacking */
     .portfolio-service-grid {
         flex-direction: column;
         width: 100%;
@@ -519,7 +522,6 @@ body::-webkit-scrollbar {
         padding: 16px !important;
     }
 
-    /* Organization Cards Grid vertical stacking */
     .portfolio-org-grid {
         flex-direction: column;
         width: 100%;
@@ -533,122 +535,6 @@ body::-webkit-scrollbar {
     }
 }
 
-@media (max-width: 768px) {
-    /* Stack work showcase card text & preview image vertically on smaller screens */
-    .portfolio-work-showcase {
-        flex-direction: column;
-        align-items: stretch;
-        min-height: auto;
-    }
-
-    .portfolio-work-showcase-card {
-        width: 100%;
-        flex: none;
-        padding: 20px;
-    }
-
-    .portfolio-work-preview {
-        width: 100%;
-        height: 180px;
-        flex: none;
-        padding: 0 20px 20px 20px;
-    }
-}
-
-/* View Transitions */
-::view-transition-group(.page-card-forward),
-::view-transition-group(.page-card-back) {
-    animation-duration: 200ms;
-    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
-    overflow: visible;
-}
-
-/* Page Card Old Animation */
-::view-transition-old(.page-card-forward) {
-    animation: page-card-hold 1600ms linear both;
-    z-index: 1;
-}
-
-/* Page Card New Animation */
-::view-transition-new(.page-card-forward) {
-    animation: page-card-enter-forward 1600ms cubic-bezier(0.22, 1, 0.36, 1)
-        both;
-    transform-origin: 50% 50%;
-    z-index: 2;
-}
-
-::view-transition-old(.page-card-back) {
-    animation: page-card-exit-back 2400ms cubic-bezier(0.22, 1, 0.36, 1) both;
-    transform-origin: 50% 50%;
-    z-index: 2;
-}
-
-::view-transition-new(.page-card-back) {
-    animation: page-card-hold 2800ms linear both;
-    z-index: 1;
-}
-
-/* Page Card Enter Forward Animation */
-@keyframes page-card-enter-forward {
-    from {
-        transform: translateX(150vw) translateY(-10vh) rotate(30deg) scale(0.95);
-    }
-
-    to {
-        transform: translateX(0) translateY(0) rotate(0deg) scale(1);
-    }
-}
-
-/* Page Card Exit Back Animation */
-@keyframes page-card-exit-back {
-    from {
-        transform: translateX(0) translateY(0) rotate(0deg) scale(1);
-    }
-
-    to {
-        transform: translateX(150vw) translateY(-10vh) rotate(30deg) scale(0.95);
-    }
-}
-
-/* Page Card Hold Animation */
-@keyframes page-card-hold {
-    from,
-    to {
-        opacity: 1;
-        transform: none;
-    }
-}
-
-/* Reduced Motion Support */
-@media (prefers-reduced-motion: reduce) {
-    ::view-transition-group(.page-card-forward),
-    ::view-transition-group(.page-card-back),
-    ::view-transition-old(.page-card-forward),
-    ::view-transition-new(.page-card-forward),
-    ::view-transition-old(.page-card-back),
-    ::view-transition-new(.page-card-back) {
-        animation-duration: 1ms !important;
-        animation-delay: 0ms !important;
-    }
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-.animate-fade-in {
-    animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* MOBILE */
 @media (max-width: 768px) {
     .portfolio-viewport {
         display: flex;
@@ -852,5 +738,29 @@ body::-webkit-scrollbar {
 
     .portfolio-media-name {
         font-size: 12px;
+    }
+
+    .link-btn {
+        font-size: 10px;
+    }
+
+    /* STACK */
+    .portfolio-work-showcase {
+        flex-direction: column;
+        align-items: stretch;
+        min-height: auto;
+    }
+
+    .portfolio-work-showcase-card {
+        width: 100%;
+        flex: none;
+        padding: 20px;
+    }
+
+    .portfolio-work-preview {
+        width: 100%;
+        height: 180px;
+        flex: none;
+        padding: 0 20px 20px 20px;
     }
 }

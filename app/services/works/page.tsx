@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
 import {
     PageCard,
     PageNav,
@@ -13,21 +12,17 @@ import Link from "next/link";
 
 /* Works Page */
 export default function Works() {
-    const [activeWorkIdx, setActiveWorkIdx] = useState(0);
-
     const worksMediaSections: MediaSmallPanelSection[] = [
         {
             imageSrc: "",
-            alt: "Services section graphic illustration",
+            alt: "Works section graphic",
             bgColor: "#15616d",
-            number: "02",
-            label: "services",
+            number: "03",
+            label: "works",
             iconSrc: "/dashicons_portfolio.svg",
             priority: true,
         },
     ];
-
-    const featuredWork = works[activeWorkIdx];
 
     return (
         <div className="portfolio-viewport select-none">
@@ -39,102 +34,88 @@ export default function Works() {
                             {/* NAV */}
                             <PageNav activePage="works" />
 
-                            {/* Scrollable Main Content */}
-                            <div className="portfolio-main-copy portfolio-scroll-area">
-                                {/* TITLE */}
-                                <h1 className="portfolio-services-title lg:mt-8 mt-10 mb-6 text-[var(--brand-teal)]">
-                                    <span className="block">Projects</span>
+                            {/* MAIN */}
+                            <div className="portfolio-main-copy portfolio-scroll-area overflow-y-auto pr-2">
+                                <h1 className="portfolio-services-title mb-2 text-[var(--brand-teal)]">
+                                    Recent Works
                                 </h1>
 
-                                <div className="portfolio-works-layout">
-                                    {/* PROJECT LIST */}
-                                    <div className="portfolio-work-list">
-                                        {works.map((work, idx) => {
-                                            const isActive =
-                                                idx === activeWorkIdx;
-                                            return (
-                                                <div
-                                                    key={work.id}
-                                                    className={`portfolio-work-list-item ${
-                                                        isActive
-                                                            ? "is-active"
-                                                            : ""
-                                                    } ${work.description ? "cursor-pointer" : "cursor-not-allowed opacity-50"}`}
-                                                    onClick={() => {
-                                                        if (work.description) {
-                                                            setActiveWorkIdx(
-                                                                idx,
-                                                            );
-                                                        }
-                                                    }}>
-                                                    <p className="portfolio-work-list-num mr-1">
-                                                        {work.id}
-                                                    </p>
-                                                    <p className="portfolio-work-list-dash mr-1">
-                                                        ——
-                                                    </p>
-                                                    <p className="portfolio-work-list-title">
+                                <div className="portfolio-works-layout flex flex-col">
+                                    {works.map((work) => {
+                                        const desc =
+                                            work.description ||
+                                            "Coming soon...";
+                                        return (
+                                            <a
+                                                href={work.href}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                key={work.id}
+                                                className="portfolio-work-card flex flex-col sm:flex-row items-center gap-6 p-6 bg-[var(--brand-teal)] rounded-[22px] text-white">
+                                                {/* IMAGE */}
+                                                {work.imageSrc ? (
+                                                    <div className="relative w-36 h-36 sm:w-40 sm:h-40 rounded-[14px] overflow-hidden shrink-0 bg-white border border-white/10">
+                                                        <Image
+                                                            src={work.imageSrc}
+                                                            alt={`${work.title} preview`}
+                                                            fill
+                                                            className="object-cover"
+                                                            priority
+                                                        />
+                                                    </div>
+                                                ) : (
+                                                    <div className="w-36 h-36 sm:w-40 sm:h-40 rounded-[14px] shrink-0 bg-[#001524]/20 border border-white/10 flex items-center justify-center">
+                                                        <Image
+                                                            src="/dashicons_portfolio.svg"
+                                                            alt="Work placeholder"
+                                                            width={48}
+                                                            height={48}
+                                                            className="opacity-40"
+                                                        />
+                                                    </div>
+                                                )}
+                                                {/* TEXT */}
+                                                <div className="flex-1 flex flex-col justify-center text-center sm:text-left">
+                                                    <h2 className="text-[24px] sm:text-[28px] font-display leading-none tracking-tight">
                                                         {work.title}
+                                                    </h2>
+                                                    <p className="mt-3 text-[12px] sm:text-[14px] text-white/80 leading-[1.25] max-w-xl">
+                                                        {desc}
                                                     </p>
                                                 </div>
-                                            );
-                                        })}
-                                    </div>
-
-                                    {/* WORK SHOWCASE */}
-                                    <div className="portfolio-work-showcase">
-                                        {/* TEAL CARD */}
-                                        <div className="portfolio-work-showcase-card">
-                                            <h2 className="portfolio-work-title font-display">
-                                                {featuredWork.title}
-                                            </h2>
-                                            <p className="portfolio-work-desc">
-                                                {featuredWork.description}
-                                            </p>
-                                            {featuredWork.href && (
-                                                <Link
-                                                    className="portfolio-btn flex items-center justify-center rounded-full bg-[white] font-bold uppercase tracking-[0.08em] text-[10px] text-[var(--brand-teal)]"
-                                                    href={featuredWork.href}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer">
-                                                    VISIT {featuredWork.title}
-                                                </Link>
-                                            )}
-                                        </div>
-
-                                        {/* PREVIEW IMAGE */}
-                                        {featuredWork.imageSrc && (
-                                            <div className="portfolio-work-preview">
-                                                <div className="portfolio-work-image-container">
-                                                    <Image
-                                                        src={
-                                                            featuredWork.imageSrc
-                                                        }
-                                                        alt={`${featuredWork.title} preview`}
-                                                        fill
-                                                        className="object-cover"
-                                                        priority
-                                                    />
-                                                </div>
-                                            </div>
-                                        )}
-                                    </div>
+                                                {/* SHARE */}
+                                                {work.href && (
+                                                    <div
+                                                        className="p-4"
+                                                        aria-label={`Visit ${work.title}`}>
+                                                        <Image
+                                                            src="/grommet-icons_share.svg"
+                                                            alt="Share Link"
+                                                            width={26}
+                                                            height={26}
+                                                            className="object-contain"
+                                                        />
+                                                    </div>
+                                                )}
+                                            </a>
+                                        );
+                                    })}
                                 </div>
-                                {/* BUTTONS */}
-                                <div className="mt-4 pt-4 flex justify-between">
-                                    <Link
-                                        href="/services"
-                                        transitionTypes={["nav-back"]}
-                                        className="inline-flex items-center gap-2 text-[var(--brand-teal)] font-semibold uppercase tracking-[0.05em] text-[12px] hover:translate-x-1 transition-transform">
-                                        &larr; SERVICES
-                                    </Link>
-                                    <Link
-                                        href="/contact"
-                                        transitionTypes={["nav-forward"]}
-                                        className="inline-flex items-center gap-2 text-[var(--brand-teal)] font-semibold uppercase tracking-[0.05em] text-[12px] hover:translate-x-1 transition-transform">
-                                        CONTACT &rarr;
-                                    </Link>
-                                </div>
+                            </div>
+                            {/* BUTTONS */}
+                            <div className="mt-4 pt-4 flex justify-between">
+                                <Link
+                                    href="/services"
+                                    transitionTypes={["nav-back"]}
+                                    className="link-btn inline-flex items-center gap-2 text-[var(--brand-teal)] font-semibold uppercase tracking-[0.05em] text-[12px] hover:translate-x-1 transition-transform">
+                                    &larr; SERVICES
+                                </Link>
+                                <Link
+                                    href="/contact"
+                                    transitionTypes={["nav-forward"]}
+                                    className="link-btn inline-flex items-center gap-2 text-[var(--brand-teal)] font-semibold uppercase tracking-[0.05em] text-[12px] hover:translate-x-1 transition-transform">
+                                    CONTACT &rarr;
+                                </Link>
                             </div>
                         </div>
 

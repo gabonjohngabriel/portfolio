@@ -85,21 +85,21 @@ export default function Services() {
                                         ))}
                                     </div>
                                 </div>
-                                {/* BUTTONS */}
-                                <div className="mt-4 pt-4 flex justify-between">
-                                    <Link
-                                        href="/about/orgs"
-                                        transitionTypes={["nav-back"]}
-                                        className="inline-flex items-center gap-2 text-[var(--brand-teal)] font-semibold uppercase tracking-[0.05em] text-[12px] hover:translate-x-1 transition-transform">
-                                        &larr; About
-                                    </Link>
-                                    <Link
-                                        href="/services/works"
-                                        transitionTypes={["nav-forward"]}
-                                        className="inline-flex items-center gap-2 text-[var(--brand-teal)] font-semibold uppercase tracking-[0.05em] text-[12px] hover:translate-x-1 transition-transform">
-                                        Works &rarr;
-                                    </Link>
-                                </div>
+                            </div>
+                            {/* BUTTONS */}
+                            <div className="mt-4 pt-4 flex justify-between">
+                                <Link
+                                    href="/about/orgs"
+                                    transitionTypes={["nav-back"]}
+                                    className="link-btn inline-flex items-center gap-2 text-[var(--brand-teal)] font-semibold uppercase tracking-[0.05em] hover:translate-x-1 transition-transform">
+                                    &larr; About
+                                </Link>
+                                <Link
+                                    href="/services/works"
+                                    transitionTypes={["nav-forward"]}
+                                    className="link-btn inline-flex items-center gap-2 text-[var(--brand-teal)] font-semibold uppercase tracking-[0.05em] hover:translate-x-1 transition-transform">
+                                    Works &rarr;
+                                </Link>
                             </div>
                         </div>
 

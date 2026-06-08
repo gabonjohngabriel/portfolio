@@ -13,7 +13,7 @@ export default function About() {
     const aboutMediaSections: MediaSection[] = [
         {
             imageSrc: "/about_image.svg",
-            alt: "John Gabriel Gabon profile graphic illustration",
+            alt: "John Gabriel Gabon",
             bgColor: "#ff7d00",
             number: "01",
             label: "about",
@@ -100,10 +100,11 @@ export default function About() {
 
                             {/* NEXT BUTTON */}
                             <div className="mt-4 pt-4 flex justify-between">
+                                <span></span>
                                 <Link
                                     href="/about/orgs"
                                     transitionTypes={["nav-forward"]}
-                                    className="inline-flex items-center gap-2 text-[var(--brand-orange)] font-semibold uppercase tracking-[0.05em] text-[12px] hover:translate-x-1 transition-transform">
+                                    className="link-btn inline-flex items-center gap-2 text-[var(--brand-orange)] font-semibold uppercase tracking-[0.05em] hover:translate-x-1 transition-transform">
                                     Experiences, Orgs, & Socials &rarr;
                                 </Link>
                             </div>

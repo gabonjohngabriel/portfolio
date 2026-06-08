@@ -45,7 +45,7 @@ export default function Orgs() {
                                         {experiences.map((experience) => (
                                             <div
                                                 key={experience.position}
-                                                className="portfrolio-org-cad items-start justify-center bg-[#ff7d00] shadow-sm hover:-translate-y-1 transition-all duration-300 ease-out p-6 rounded-2xl">
+                                                className="portfolio-org-card items-start justify-center bg-[#ff7d00] shadow-sm hover:-translate-y-1 transition-all duration-300 ease-out p-6 rounded-2xl">
                                                 {/* POSITION  */}
                                                 <h2 className="text-left leading-[1.25] text-[14px]  text-[#ffffff]">
                                                     {experience.position}
@@ -133,21 +133,21 @@ export default function Orgs() {
                                         ))}
                                     </div>
                                 </div>
-                                {/* BUTTONS */}
-                                <div className="mt-4 pt-4 flex justify-between">
-                                    <Link
-                                        href="/about"
-                                        transitionTypes={["nav-back"]}
-                                        className="inline-flex items-center gap-2 text-[var(--brand-orange)] font-semibold uppercase tracking-[0.05em] text-[12px] hover:translate-x-1 transition-transform">
-                                        &larr; Previous
-                                    </Link>
-                                    <Link
-                                        href="/services"
-                                        transitionTypes={["nav-forward"]}
-                                        className="inline-flex items-center gap-2 text-[var(--brand-orange)] font-semibold uppercase tracking-[0.05em] text-[12px] hover:translate-x-1 transition-transform">
-                                        Services &rarr;
-                                    </Link>
-                                </div>
+                            </div>
+                            {/* BUTTONS */}
+                            <div className="mt-4 pt-4 flex justify-between">
+                                <Link
+                                    href="/about"
+                                    transitionTypes={["nav-back"]}
+                                    className="link-btn inline-flex items-center gap-2 text-[var(--brand-orange)] font-semibold uppercase tracking-[0.05em] hover:translate-x-1 transition-transform">
+                                    &larr; Previous
+                                </Link>
+                                <Link
+                                    href="/services"
+                                    transitionTypes={["nav-forward"]}
+                                    className="link-btn inline-flex items-center gap-2 text-[var(--brand-orange)] font-semibold uppercase tracking-[0.05em] hover:translate-x-1 transition-transform">
+                                    Services &rarr;
+                                </Link>
                             </div>
                         </div>
 

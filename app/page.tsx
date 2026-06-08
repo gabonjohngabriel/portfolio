@@ -46,7 +46,7 @@ export default function Home() {
                             <div className="portfolio-main-copy portfolio-main-copy-home portfolio-scroll-area">
                                 {/* TITLE */}
                                 <p className="uppercase text-[12px] mb-1.5 mt-8 lg:mt-0">
-                                    @Lxaplace
+                                    JOHN GABRIEL GABON
                                 </p>
                                 <h1 className="portfolio-hero-title text-[#001524]">
                                     <span className="block">
