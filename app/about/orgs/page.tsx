@@ -47,12 +47,12 @@ export default function Orgs() {
                                                 key={experience.position}
                                                 className="portfolio-org-card items-start justify-center bg-[#ff7d00] shadow-sm hover:-translate-y-1 transition-all duration-300 ease-out p-6 rounded-2xl">
                                                 {/* POSITION  */}
-                                                <h2 className="text-left leading-[1.25] text-[14px]  text-[#ffffff]">
+                                                <h2 className="text-left leading-[1.25] text-[14px] sm:text-[18px] text-[#ffffff]">
                                                     {experience.position}
                                                 </h2>
 
                                                 {/* ORGANIZATION */}
-                                                <p className="text-left leading-[1.25] text-[12px] text-[#ffffff]/90 whitespace-pre-line font-regular">
+                                                <p className="text-left leading-[1.25] text-[12px] sm:text-[14px] text-[#ffffff]/90 whitespace-pre-line font-regular">
                                                     {Array.isArray(
                                                         experience.organization,
                                                     )
@@ -61,8 +61,8 @@ export default function Orgs() {
                                                           )
                                                         : experience.organization}
                                                 </p>
-                                                {/* ORGANIZATION */}
-                                                <p className="text-left leading-[1.25] text-[12px] text-[#ffffff]/90 whitespace-pre-line font-regular">
+                                                {/* DATE */}
+                                                <p className="text-left leading-[1.25] text-[12px] sm:text-[14px] text-[#ffffff]/90 whitespace-pre-line font-regular">
                                                     {experience.date}
                                                 </p>
                                             </div>

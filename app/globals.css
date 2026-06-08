@@ -646,6 +646,11 @@ body::-webkit-scrollbar {
         -ms-overflow-style: none;
     }
 
+    .portfolio-card-shell.overflow-hidden {
+        overflow: hidden !important;
+        overflow-y: hidden !important;
+    }
+
     .portfolio-card-shell::-webkit-scrollbar {
         display: none;
     }
@@ -669,37 +674,45 @@ body::-webkit-scrollbar {
     }
 
     .portfolio-page-nav {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        padding: 24px;
+        position: relative;
+        padding-left: 4px;
+        background-color: #ffffff;
         z-index: 100;
         width: 100%;
         box-sizing: border-box;
     }
 
-    .portfolio-page-nav div.absolute {
+    .portfolio-page-nav.nav-open {
+        position: fixed;
+        inset: 0;
+        height: 100%;
+        max-height: 100%;
+        background-color: #ffffff;
+        padding: 42px;
+    }
+
+    /* LIST */
+    .portfolio-page-nav div.fixed {
         top: 0;
         left: 0;
         right: 0;
-        height: 790px;
-        max-height: 100dvh;
+        bottom: 0;
+        height: 100%;
         z-index: 99;
     }
 
     .portfolio-main-copy {
-        margin-top: 48px;
+        margin-top: 12px;
         height: auto;
         min-height: auto;
         overflow: visible;
-        justify-content: flex-end;
+        justify-content: center;
         display: flex;
         flex-direction: column;
     }
 
     .order-2 .portfolio-main-copy {
-        margin-top: 16px;
+        margin-top: 24px;
     }
 
     .portfolio-hero-title {
@@ -714,14 +727,12 @@ body::-webkit-scrollbar {
     }
 
     .portfolio-copy {
-        margin-top: 12px;
         font-size: 12px;
         line-height: 1.3;
     }
 
     .portfolio-actions {
-        margin-top: 4px;
-        gap: 8px;
+        gap: 12px;
     }
 
     .portfolio-actions a {
@@ -849,5 +860,47 @@ body::-webkit-scrollbar {
         height: 180px;
         flex: none;
         padding: 0 20px 20px 20px;
+    }
+
+    /* MOBILE SPACING & GAP ENHANCEMENTS */
+    .portfolio-section-block {
+        margin-top: 28px;
+    }
+
+    .portfolio-org-grid {
+        margin-top: 16px;
+        gap: 16px;
+    }
+
+    .portfolio-service-grid {
+        margin-top: 16px;
+        gap: 16px;
+    }
+
+    .portfolio-services-section {
+        margin-top: 28px;
+    }
+
+    .portfolio-stack-grid {
+        margin-top: 16px;
+    }
+
+    .portfolio-section-block > div {
+        margin-top: 16px !important;
+    }
+
+    .portfolio-about-title,
+    .portfolio-services-title,
+    .portfolio-main-copy > div:first-child {
+        margin-top: 16px !important;
+    }
+
+    .portfolio-left-panel > div.mt-4 {
+        margin-top: 28px !important;
+        padding-top: 16px !important;
+    }
+
+    .portfolio-main-copy-contact > div.grid {
+        margin-top: 24px !important;
     }
 }

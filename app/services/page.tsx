@@ -35,7 +35,7 @@ export default function Services() {
                             {/* Scrollable Main Content */}
                             <div className="portfolio-main-copy portfolio-scroll-area">
                                 {/* TITLE */}
-                                <h1 className="portfolio-services-title lg:mt-8 mt-10 text-[var(--brand-teal)]">
+                                <h1 className="portfolio-services-title lg:mt-8 mt-2 text-[var(--brand-teal)]">
                                     <span className="block">
                                         Crafting Quality Standards
                                     </span>

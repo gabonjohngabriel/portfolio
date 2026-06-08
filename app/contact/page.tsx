@@ -40,7 +40,7 @@ export default function Contact() {
                             {/* Scrollable Main Content */}
                             <div className="portfolio-main-copy portfolio-main-copy-contact portfolio-scroll-area">
                                 {/* TITLE */}
-                                <div className="flex items-center gap-4 sm:gap-6 lg:mt-8 mt-10">
+                                <div className="flex items-center gap-4 sm:gap-6 lg:mt-8 mt-2">
                                     <Image
                                         src="/mynaui_send.svg"
                                         alt="Send icon"
@@ -83,7 +83,7 @@ export default function Contact() {
                                         <h2 className="portfolio-section-title text-[var(--brand-orange)]">
                                             Email
                                         </h2>
-                                        <div className="mt-2 text-[#001524] leading-[1.25] text-[14px] break-words">
+                                        <div className="mt-2 text-[#001524] leading-[1.25] text-[12px] sm:text-[14px] break-words">
                                             <a
                                                 href="mailto:gabonjohngabriel@gmail.com"
                                                 target="_blank"

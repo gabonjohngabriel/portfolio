@@ -35,7 +35,7 @@ export default function About() {
                             {/* MAIN */}
                             <div className="portfolio-main-copy portfolio-scroll-area">
                                 {/* HEADINGS */}
-                                <h1 className="portfolio-about-title lg:mt-8 mt-10 text-[#001524]">
+                                <h1 className="portfolio-about-title lg:mt-8 mt-2 text-[#001524]">
                                     <span className="block text-[var(--brand-orange)]">
                                         John Gabriel
                                     </span>
@@ -48,23 +48,23 @@ export default function About() {
                                 <p className="portfolio-copy max-w-xl text-[#001524]">
                                     2nd Year BSIT Student
                                     <br />
-                                    <span className="text-[12px] text-[#001524] italic">
+                                    <span className="text-[12px] sm:text-[14px] text-[#001524] italic">
                                         Aspiring Software Engineer / Full Stack
                                         Developer / UI/UX Designer
                                     </span>
                                 </p>
 
                                 {/* BUTTONS */}
-                                <div className="portfolio-actions flex flex-wrap">
+                                <div className="portfolio-actions flex flex-wrap gap-4 mt-2">
                                     <a
-                                        className="portfolio-btn flex items-center justify-center rounded-full bg-[#ff7d00] px-8 py-3 text-[14px] font-semibold uppercase tracking-[0.6px] text-white transition-all hover:scale-105 hover:-translate-y-0.5 active:scale-95 "
+                                        className="portfolio-btn items-center justify-center rounded-full bg-[#ff7d00] font-semibold uppercase tracking-[0.6px] text-white transition-all hover:scale-105 hover:-translate-y-0.5 active:scale-95"
                                         href="/misc/Resume.pdf"
                                         target="_blank"
                                         rel="noopener noreferrer">
                                         Download CV
                                     </a>
                                     <a
-                                        className="portfolio-btn flex items-center justify-center rounded-full bg-[#001524] px-8 py-3 text-[14px] font-semibold uppercase tracking-[0.6px] text-white transition-all hover:scale-105 hover:-translate-y-0.5 active:scale-95 "
+                                        className="portfolio-btn items-center justify-center rounded-full bg-[#001524] font-semibold uppercase tracking-[0.6px] text-white transition-all hover:scale-105 hover:-translate-y-0.5 active:scale-95"
                                         href="https://www.linkedin.com/in/gabrielgabon/"
                                         target="_blank"
                                         rel="noopener noreferrer">
