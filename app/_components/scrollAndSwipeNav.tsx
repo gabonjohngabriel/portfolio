@@ -21,14 +21,25 @@ export function ScrollAndSwipeNav() {
 
     useEffect(() => {
         isNavigatingRef.current = false;
-    }, [pathname]);
+        lastNavTimeRef.current = Date.now();
+
+        const currentIndex = PAGE_ORDER.indexOf(pathname);
+        if (currentIndex !== -1) {
+            if (currentIndex > 0) {
+                router.prefetch(PAGE_ORDER[currentIndex - 1]);
+            }
+            if (currentIndex < PAGE_ORDER.length - 1) {
+                router.prefetch(PAGE_ORDER[currentIndex + 1]);
+            }
+        }
+    }, [pathname, router]);
 
     useEffect(() => {
         const handleWheel = (e: WheelEvent) => {
             const now = Date.now();
             if (
                 isNavigatingRef.current ||
-                now - lastNavTimeRef.current < 1200
+                now - lastNavTimeRef.current < 1600
             ) {
                 return;
             }
@@ -114,7 +125,7 @@ export function ScrollAndSwipeNav() {
             const now = Date.now();
             if (
                 isNavigatingRef.current ||
-                now - lastNavTimeRef.current < 1000
+                now - lastNavTimeRef.current < 1600
             ) {
                 return;
             }

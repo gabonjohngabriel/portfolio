@@ -3,40 +3,40 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export interface PageNavProps {
     activePage: string;
 }
 
+const PAGE_ORDER = [
+    "/",
+    "/about",
+    "/about/orgs",
+    "/services",
+    "/services/works",
+    "/contact",
+];
+
 export function PageNav({ activePage }: PageNavProps) {
     const [isOpen, setIsOpen] = useState(false);
+    const pathname = usePathname();
+
+    const currentIndex = PAGE_ORDER.indexOf(pathname);
+
+    const getTransitionType = (targetHref: string) => {
+        const targetIndex = PAGE_ORDER.indexOf(targetHref);
+        if (currentIndex === -1 || targetIndex === -1) return "none";
+        if (currentIndex === targetIndex) return "none";
+        return targetIndex > currentIndex ? "nav-forward" : "nav-back";
+    };
 
     const navLinks = [
-        { href: "/", label: "home", page: "home", transition: "nav-back" },
-        {
-            href: "/about",
-            label: "about",
-            page: "about",
-            transition: "nav-forward",
-        },
-        {
-            href: "/services",
-            label: "services",
-            page: "services",
-            transition: "nav-forward",
-        },
-        {
-            href: "/services/works",
-            label: "works",
-            page: "works",
-            transition: "nav-forward",
-        },
-        {
-            href: "/contact",
-            label: "contact",
-            page: "contact",
-            transition: "nav-forward",
-        },
+        { href: "/", label: "home", page: "home" },
+        { href: "/about", label: "about", page: "about" },
+        { href: "/services", label: "services", page: "services" },
+        { href: "/services/works", label: "works", page: "works" },
+        { href: "/contact", label: "contact", page: "contact" },
     ];
 
     return (
@@ -47,7 +47,7 @@ export function PageNav({ activePage }: PageNavProps) {
                     <Link
                         key={link.page}
                         href={link.href}
-                        transitionTypes={[link.transition]}
+                        transitionTypes={[getTransitionType(link.href)]}
                         className={`hover:opacity-75 transition-opacity ${activePage === link.page ? "opacity-50" : ""}`}>
                         {link.label}
                     </Link>
@@ -63,7 +63,7 @@ export function PageNav({ activePage }: PageNavProps) {
                     <Link
                         key={"home"}
                         href={"/"}
-                        transitionTypes={["nav-back"]}
+                        transitionTypes={[getTransitionType("/")]}
                         className="hover:opacity-75">
                         home
                     </Link>
@@ -99,7 +99,7 @@ export function PageNav({ activePage }: PageNavProps) {
                             <Link
                                 key={link.page}
                                 href={link.href}
-                                transitionTypes={[link.transition]}
+                                transitionTypes={[getTransitionType(link.href)]}
                                 onClick={() => setIsOpen(false)}
                                 className={`hover:opacity-75 transition-opacity ${activePage === link.page ? "opacity-50" : ""}`}>
                                 {link.label}

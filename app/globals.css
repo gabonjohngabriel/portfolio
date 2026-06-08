@@ -401,18 +401,46 @@ body::-webkit-scrollbar {
 }
 
 /* VIEW TRANSITIONS */
-::view-transition-group(.page-card-forward),
+::view-transition-group(page-card-forward) {
+    animation-duration: 1000ms;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    overflow: visible;
+}
+::view-transition-group(.page-card-forward) {
+    animation-duration: 1000ms;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    overflow: visible;
+}
+::view-transition-group(page-card-back) {
+    animation-duration: 1000ms;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    overflow: visible;
+}
 ::view-transition-group(.page-card-back) {
-    animation-duration: 200ms;
+    animation-duration: 1000ms;
     animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
     overflow: visible;
 }
 
+/* Forward Transition  */
+::view-transition-old(page-card-forward) {
+    animation: page-card-enter-forward 1600ms cubic-bezier(0.22, 1, 0.36, 1)
+        both;
+    transform-origin: 50% 50%;
+    z-index: 1;
+}
 ::view-transition-old(.page-card-forward) {
-    animation: page-card-hold 1600ms linear both;
+    animation: page-card-hold 1600ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    transform-origin: 50% 50%;
     z-index: 1;
 }
 
+::view-transition-new(page-card-forward) {
+    animation: page-card-enter-forward 1600ms cubic-bezier(0.22, 1, 0.36, 1)
+        both;
+    transform-origin: 50% 50%;
+    z-index: 2;
+}
 ::view-transition-new(.page-card-forward) {
     animation: page-card-enter-forward 1600ms cubic-bezier(0.22, 1, 0.36, 1)
         both;
@@ -420,20 +448,52 @@ body::-webkit-scrollbar {
     z-index: 2;
 }
 
+/* Backward Transition */
+::view-transition-old(page-card-back) {
+    animation: page-card-exit-back 1600ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    transform-origin: 50% 50%;
+    z-index: 2;
+}
 ::view-transition-old(.page-card-back) {
-    animation: page-card-exit-back 2400ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation: page-card-exit-back 1600ms cubic-bezier(0.22, 1, 0.36, 1) both;
     transform-origin: 50% 50%;
     z-index: 2;
 }
 
+::view-transition-new(page-card-back) {
+    animation: page-card-enter-back 1600ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    transform-origin: 50% 50%;
+    z-index: 1;
+}
 ::view-transition-new(.page-card-back) {
-    animation: page-card-hold 2800ms linear both;
+    animation: page-card-hold 1600ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    transform-origin: 50% 50%;
     z-index: 1;
 }
 
 @keyframes page-card-enter-forward {
     from {
-        transform: translateX(150vw) translateY(-10vh) rotate(30deg) scale(0.95);
+        transform: translateX(110vw) translateY(-10vh) rotate(30deg) scale(0.95);
+    }
+    to {
+        transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+    }
+}
+
+@keyframes page-card-exit-forward {
+    from {
+        transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+    }
+    to {
+        transform: translateX(-110vw) translateY(-10vh) rotate(-30deg)
+            scale(0.95);
+    }
+}
+
+@keyframes page-card-enter-back {
+    from {
+        transform: translateX(-110vw) translateY(-10vh) rotate(-30deg)
+            scale(0.95);
     }
     to {
         transform: translateX(0) translateY(0) rotate(0deg) scale(1);
@@ -445,7 +505,7 @@ body::-webkit-scrollbar {
         transform: translateX(0) translateY(0) rotate(0deg) scale(1);
     }
     to {
-        transform: translateX(150vw) translateY(-10vh) rotate(30deg) scale(0.95);
+        transform: translateX(110vw) translateY(-10vh) rotate(30deg) scale(0.95);
     }
 }
 
@@ -458,14 +518,41 @@ body::-webkit-scrollbar {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    ::view-transition-group(.page-card-forward),
-    ::view-transition-group(.page-card-back),
-    ::view-transition-old(.page-card-forward),
-    ::view-transition-new(.page-card-forward),
-    ::view-transition-old(.page-card-back),
+    ::view-transition-group(page-card-forward) {
+        animation-duration: 1ms !important;
+    }
+    ::view-transition-group(.page-card-forward) {
+        animation-duration: 1ms !important;
+    }
+    ::view-transition-group(page-card-back) {
+        animation-duration: 1ms !important;
+    }
+    ::view-transition-group(.page-card-back) {
+        animation-duration: 1ms !important;
+    }
+    ::view-transition-old(page-card-forward) {
+        animation-duration: 1ms !important;
+    }
+    ::view-transition-old(.page-card-forward) {
+        animation-duration: 1ms !important;
+    }
+    ::view-transition-new(page-card-forward) {
+        animation-duration: 1ms !important;
+    }
+    ::view-transition-new(.page-card-forward) {
+        animation-duration: 1ms !important;
+    }
+    ::view-transition-old(page-card-back) {
+        animation-duration: 1ms !important;
+    }
+    ::view-transition-old(.page-card-back) {
+        animation-duration: 1ms !important;
+    }
+    ::view-transition-new(page-card-back) {
+        animation-duration: 1ms !important;
+    }
     ::view-transition-new(.page-card-back) {
         animation-duration: 1ms !important;
-        animation-delay: 0ms !important;
     }
 }
 

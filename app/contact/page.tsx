@@ -14,7 +14,7 @@ export default function Contact() {
             imageSrc: "",
             alt: "Contact section graphic",
             bgColor: "#ff7d00", // Brand Orange
-            number: "03",
+            number: "04",
             label: "contact",
             iconSrc: "/dashicons_portfolio.svg",
             priority: true,
