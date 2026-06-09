@@ -5,8 +5,8 @@ import {
     PageNav,
     MediaSmallPanel,
     type MediaSmallPanelSection,
-} from "../_components";
-import { services } from "../_lib";
+} from "@/_components";
+import { services } from "@/_lib";
 
 /* Services Page */
 export default function Services() {

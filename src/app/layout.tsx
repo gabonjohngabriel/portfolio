@@ -6,7 +6,7 @@ import localFont from "next/font/local";
 import { Cal_Sans, Montserrat } from "next/font/google";
 
 const amoria = localFont({
-    src: "../public/fonts/AMORIA.otf",
+    src: "../../public/fonts/AMORIA.otf",
     variable: "--font-amoria",
     display: "swap",
 });
@@ -23,7 +23,7 @@ const montserrat = Montserrat({
     weight: ["400", "500", "600", "700", "800"],
 });
 
-import { ScrollAndSwipeNav } from "./_components";
+import { ScrollAndSwipeNav } from "@/_components";
 
 // Metadata
 export const metadata: Metadata = {

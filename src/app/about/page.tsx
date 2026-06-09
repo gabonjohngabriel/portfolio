@@ -4,9 +4,9 @@ import {
     PageNav,
     MediaPanel,
     type MediaSection,
-    TechStackGrid,
-} from "../_components";
-import { languages, frameworksAndLibraries, tools } from "../_lib";
+} from "@/_components";
+import { TechStackGrid } from "@/_components/techStackGrid";
+import { languages, frameworksAndLibraries, tools } from "@/_lib";
 
 /* About Page */
 export default function About() {

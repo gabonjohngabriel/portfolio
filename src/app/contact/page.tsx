@@ -4,8 +4,8 @@ import {
     PageNav,
     MediaSmallPanel,
     type MediaSmallPanelSection,
-} from "../_components";
-import { socials } from "../_lib";
+} from "@/_components";
+import { socials } from "@/_lib";
 
 /* Contact Page */
 export default function Contact() {

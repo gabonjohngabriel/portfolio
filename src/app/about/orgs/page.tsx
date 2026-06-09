@@ -4,9 +4,9 @@ import {
     PageNav,
     MediaPanel,
     type MediaSection,
-} from "../../_components";
+} from "@/_components";
 import Link from "next/link";
-import { organizations, experiences, socials } from "../../_lib";
+import { organizations, experiences, socials } from "@/_lib";
 
 /* Organizations & Involvement Page */
 export default function Orgs() {
@@ -45,7 +45,7 @@ export default function Orgs() {
                                         {experiences.map((experience) => (
                                             <div
                                                 key={experience.position}
-                                                className="portfolio-org-card items-start justify-center bg-[#ff7d00] shadow-sm hover:-translate-y-1 transition-all duration-300 ease-out p-6 rounded-2xl">
+                                                className="portfolio-org-card items-start justify-center bg-[#ff7d00] hover:-translate-y-1 transition-all duration-300 ease-out p-6 rounded-2xl">
                                                 {/* POSITION  */}
                                                 <h2 className="text-left leading-[1.25] text-[14px] sm:text-[18px] text-[#ffffff]">
                                                     {experience.position}
@@ -80,7 +80,7 @@ export default function Orgs() {
                                         {organizations.map((org) => (
                                             <div
                                                 key={org.label}
-                                                className="portfolio-org-card items-start justify-center bg-[#ff7d00] shadow-sm hover:-translate-y-1 transition-all duration-300 ease-out p-6 rounded-2xl">
+                                                className="portfolio-org-card items-start justify-center bg-[#ff7d00] hover:-translate-y-1 transition-all duration-300 ease-out p-6 rounded-2xl">
                                                 {/* ORG NAME */}
                                                 <h2 className="text-left leading-[1.1] text-[16px] sm:text-[18px] text-[#ffffff] mt-2">
                                                     {org.label}

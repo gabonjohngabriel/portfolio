@@ -6,8 +6,8 @@ import {
     PageNav,
     MediaSmallPanel,
     type MediaSmallPanelSection,
-} from "../../_components";
-import { works } from "../../_lib";
+} from "@/_components";
+import { works } from "@/_lib";
 import Link from "next/link";
 
 /* Works Page */
@@ -118,7 +118,7 @@ export default function Works() {
                             </div>
                         </div>
 
-                        {/* RIGHT PANEL - Services Visual Graphic Column */}
+                        {/* RIGHT PANEL */}
                         <MediaSmallPanel
                             className="portfolio-media-stack-hide order-1 lg:order-2 min-h-[300px] lg:min-h-0 mb-8 lg:mb-0 rounded-t-[24px] lg:rounded-none overflow-hidden shrink-0"
                             sections={worksMediaSections}

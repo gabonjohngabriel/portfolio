@@ -5,8 +5,8 @@ import {
     PageNav,
     MediaPanel,
     type MediaSection,
-} from "./_components";
-import { featuredTechStacks } from "./_lib";
+} from "@/_components";
+import { featuredTechStacks } from "@/_lib";
 
 export default function Home() {
     const homeMediaSections: MediaSection[] = [
@@ -83,7 +83,7 @@ export default function Home() {
                                 </p>
 
                                 {/* ACTION BUTTONS */}
-                                <div className="portfolio-actions flex flex-wrap gap-4 mt-2">
+                                <div className="portfolio-actions flex flex-wrap gap-4">
                                     <Link
                                         className="portfolio-btn items-center justify-center rounded-full bg-[#ff7d00] font-semibold uppercase tracking-[0.6px] text-white transition-all hover:scale-105 hover:-translate-y-0.5 active:scale-95"
                                         href="/contact"
