@@ -156,7 +156,7 @@ body::-webkit-scrollbar {
 }
 
 .portfolio-section-block {
-    margin-top: clamp(2px, 4px, 6px);
+    margin-top: clamp(10px, 12px, 14px);
 }
 
 .portfolio-section-title {
